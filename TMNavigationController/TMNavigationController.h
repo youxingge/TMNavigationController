@@ -11,10 +11,10 @@
 
 @interface TMNavigationController : UINavigationController
 @end
-typedef void(^clicBackButton)(UIButton * button);
+typedef void(^clickBackButton)(UIButton * button);
 @interface navigationBarView : UIView
-@property (copy ,nonatomic) clicBackButton click;
--(void)clickBackButton:(clicBackButton)block;
+@property (copy ,nonatomic) clickBackButton click;
+-(void)clickBackButton:(clickBackButton)block;
 @property (copy ,nonatomic) NSString * title;
 @property (strong ,nonatomic)UILabel * titleLabel;
 @property (strong ,nonatomic)UIButton * backButton;

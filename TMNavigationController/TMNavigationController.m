@@ -42,7 +42,7 @@
         self.click(button);
     }
 }
--(void)clickBackButton:(clicBackButton)block{
+-(void)clickBackButton:(clickBackButton)block{
     self.click = block;
 }
 -(void)setTitle:(NSString *)title{
