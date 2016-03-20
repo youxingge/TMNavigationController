@@ -19,11 +19,12 @@
 		37D373B71C9BA420005EB8DD /* left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D373B61C9BA420005EB8DD /* left@2x.png */; };
 		37D373BC1C9BA5AA005EB8DD /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373BA1C9BA5AA005EB8DD /* FirstViewController.m */; };
 		37D373BD1C9BA5AA005EB8DD /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37D373BB1C9BA5AA005EB8DD /* FirstViewController.xib */; };
-		37D373C71C9BA9AB005EB8DD /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 37D373C61C9BA9AB005EB8DD /* 1.gif */; };
+		37D373C71C9BA9AB005EB8DD /* 1@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 37D373C61C9BA9AB005EB8DD /* 1@2x.gif */; };
 		37D373CB1C9BAD82005EB8DD /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373C91C9BAD82005EB8DD /* SecondViewController.m */; };
 		37D373CC1C9BAD82005EB8DD /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37D373CA1C9BAD82005EB8DD /* SecondViewController.xib */; };
 		37D373D01C9BAE5A005EB8DD /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373CE1C9BAE5A005EB8DD /* ThirdViewController.m */; };
 		37D373D11C9BAE5A005EB8DD /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37D373CF1C9BAE5A005EB8DD /* ThirdViewController.xib */; };
+		37FB710B1C9EC14400BCAE54 /* 2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37FB710A1C9EC14400BCAE54 /* 2@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,13 +67,14 @@
 		37D373B91C9BA5AA005EB8DD /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		37D373BA1C9BA5AA005EB8DD /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		37D373BB1C9BA5AA005EB8DD /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
-		37D373C61C9BA9AB005EB8DD /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
+		37D373C61C9BA9AB005EB8DD /* 1@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "1@2x.gif"; sourceTree = "<group>"; };
 		37D373C81C9BAD82005EB8DD /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		37D373C91C9BAD82005EB8DD /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		37D373CA1C9BAD82005EB8DD /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		37D373CD1C9BAE5A005EB8DD /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		37D373CE1C9BAE5A005EB8DD /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		37D373CF1C9BAE5A005EB8DD /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
+		37FB710A1C9EC14400BCAE54 /* 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +151,8 @@
 		37D373801C9BA345005EB8DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				37D373C61C9BA9AB005EB8DD /* 1.gif */,
+				37FB710A1C9EC14400BCAE54 /* 2@2x.png */,
+				37D373C61C9BA9AB005EB8DD /* 1@2x.gif */,
 				37D373811C9BA345005EB8DD /* main.m */,
 			);
 			name = "Supporting Files";
@@ -286,10 +289,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37D373C71C9BA9AB005EB8DD /* 1.gif in Resources */,
+				37D373C71C9BA9AB005EB8DD /* 1@2x.gif in Resources */,
 				37D373CC1C9BAD82005EB8DD /* SecondViewController.xib in Resources */,
 				37D373D11C9BAE5A005EB8DD /* ThirdViewController.xib in Resources */,
 				37D373901C9BA345005EB8DD /* LaunchScreen.storyboard in Resources */,
+				37FB710B1C9EC14400BCAE54 /* 2@2x.png in Resources */,
 				37D373BD1C9BA5AA005EB8DD /* FirstViewController.xib in Resources */,
 				37D3738D1C9BA345005EB8DD /* Assets.xcassets in Resources */,
 				37D3738B1C9BA345005EB8DD /* Main.storyboard in Resources */,
@@ -550,6 +554,7 @@
 				37D373AC1C9BA346005EB8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37D373AD1C9BA346005EB8DD /* Build configuration list for PBXNativeTarget "TMNavigationControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +563,7 @@
 				37D373AF1C9BA346005EB8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37D373B01C9BA346005EB8DD /* Build configuration list for PBXNativeTarget "TMNavigationControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +572,7 @@
 				37D373B21C9BA346005EB8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
