@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initTabbar];
-    [self performSelector:@selector(gotoWindow) withObject:self afterDelay:1];
+    [self performSelector:@selector(gotoWindow) withObject:self afterDelay:0];
 }
 -(void)initTabbar{
     _tabbar = [[UITabBarController alloc]init];

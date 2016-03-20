@@ -29,7 +29,7 @@
                 <constraint firstItem="mqk-SR-ly0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="toE-tM-uT0"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="400" y="354"/>
+            <point key="canvasLocation" x="295" y="354"/>
         </view>
     </objects>
 </document>
