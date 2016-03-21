@@ -20,12 +20,12 @@
     [self setTabBarItemWithTitle:@"first" image:@"2" selectedImage:@"left"];
 }
 -(void)setTabBarItemWithTitle:(NSString*)title image:(NSString*)image selectedImage:(NSString*)selectedImage {
-    [self.tabBarItem setImage:[UIImage imageNamed:image]];
-    [self.tabBarItem setSelectedImage:[UIImage imageNamed:selectedImage]];
+    UIImage * itemImage = [[UIImage imageNamed:image]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *itemSelectedImage = [[UIImage imageNamed:selectedImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.tabBarItem.title = title;
+    self.tabBarItem = [[UITabBarItem alloc]initWithTitle:title image:itemImage selectedImage:itemSelectedImage];
     NSDictionary * dic = @{NSForegroundColorAttributeName:[UIColor redColor]};
     [self.tabBarItem setTitleTextAttributes:dic forState:UIControlStateSelected];
-    
 }
 - (IBAction)push:(id)sender {
     SecondViewController * vc = [SecondViewController new];
