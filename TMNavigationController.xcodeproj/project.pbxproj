@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		374592A71CAE8C8600671361 /* TMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374592A61CAE8C8600671361 /* TMNavigationController.m */; };
 		37D373821C9BA345005EB8DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373811C9BA345005EB8DD /* main.m */; };
 		37D373851C9BA345005EB8DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373841C9BA345005EB8DD /* AppDelegate.m */; };
 		37D373881C9BA345005EB8DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373871C9BA345005EB8DD /* ViewController.m */; };
@@ -15,8 +16,6 @@
 		37D373901C9BA345005EB8DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D3738E1C9BA345005EB8DD /* LaunchScreen.storyboard */; };
 		37D3739B1C9BA346005EB8DD /* TMNavigationControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D3739A1C9BA346005EB8DD /* TMNavigationControllerTests.m */; };
 		37D373A61C9BA346005EB8DD /* TMNavigationControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373A51C9BA346005EB8DD /* TMNavigationControllerUITests.m */; };
-		37D373B51C9BA370005EB8DD /* TMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373B41C9BA370005EB8DD /* TMNavigationController.m */; };
-		37D373B71C9BA420005EB8DD /* left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D373B61C9BA420005EB8DD /* left@2x.png */; };
 		37D373BC1C9BA5AA005EB8DD /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373BA1C9BA5AA005EB8DD /* FirstViewController.m */; };
 		37D373BD1C9BA5AA005EB8DD /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37D373BB1C9BA5AA005EB8DD /* FirstViewController.xib */; };
 		37D373C71C9BA9AB005EB8DD /* 1@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 37D373C61C9BA9AB005EB8DD /* 1@2x.gif */; };
@@ -45,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		374592A51CAE8C8600671361 /* TMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMNavigationController.h; sourceTree = "<group>"; };
+		374592A61CAE8C8600671361 /* TMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMNavigationController.m; sourceTree = "<group>"; };
 		37D3737D1C9BA345005EB8DD /* TMNavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMNavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D373811C9BA345005EB8DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37D373831C9BA345005EB8DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,9 +62,6 @@
 		37D373A11C9BA346005EB8DD /* TMNavigationControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMNavigationControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D373A51C9BA346005EB8DD /* TMNavigationControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMNavigationControllerUITests.m; sourceTree = "<group>"; };
 		37D373A71C9BA346005EB8DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37D373B31C9BA370005EB8DD /* TMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMNavigationController.h; sourceTree = "<group>"; };
-		37D373B41C9BA370005EB8DD /* TMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMNavigationController.m; sourceTree = "<group>"; };
-		37D373B61C9BA420005EB8DD /* left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left@2x.png"; sourceTree = "<group>"; };
 		37D373B91C9BA5AA005EB8DD /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		37D373BA1C9BA5AA005EB8DD /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		37D373BB1C9BA5AA005EB8DD /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
@@ -102,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		374592A41CAE8C8600671361 /* TMNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				374592A51CAE8C8600671361 /* TMNavigationController.h */,
+				374592A61CAE8C8600671361 /* TMNavigationController.m */,
+			);
+			path = TMNavigationController;
+			sourceTree = "<group>";
+		};
 		37D373741C9BA345005EB8DD = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +132,7 @@
 		37D3737F1C9BA345005EB8DD /* TMNavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				37D373B81C9BA56F005EB8DD /* TMNavigationController */,
+				374592A41CAE8C8600671361 /* TMNavigationController */,
 				37D373831C9BA345005EB8DD /* AppDelegate.h */,
 				37D373841C9BA345005EB8DD /* AppDelegate.m */,
 				37D373861C9BA345005EB8DD /* ViewController.h */,
@@ -174,16 +181,6 @@
 				37D373A71C9BA346005EB8DD /* Info.plist */,
 			);
 			path = TMNavigationControllerUITests;
-			sourceTree = "<group>";
-		};
-		37D373B81C9BA56F005EB8DD /* TMNavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				37D373B31C9BA370005EB8DD /* TMNavigationController.h */,
-				37D373B41C9BA370005EB8DD /* TMNavigationController.m */,
-				37D373B61C9BA420005EB8DD /* left@2x.png */,
-			);
-			name = TMNavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,7 +294,6 @@
 				37D373BD1C9BA5AA005EB8DD /* FirstViewController.xib in Resources */,
 				37D3738D1C9BA345005EB8DD /* Assets.xcassets in Resources */,
 				37D3738B1C9BA345005EB8DD /* Main.storyboard in Resources */,
-				37D373B71C9BA420005EB8DD /* left@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,9 +321,9 @@
 				37D373CB1C9BAD82005EB8DD /* SecondViewController.m in Sources */,
 				37D373881C9BA345005EB8DD /* ViewController.m in Sources */,
 				37D373851C9BA345005EB8DD /* AppDelegate.m in Sources */,
+				374592A71CAE8C8600671361 /* TMNavigationController.m in Sources */,
 				37D373BC1C9BA5AA005EB8DD /* FirstViewController.m in Sources */,
 				37D373821C9BA345005EB8DD /* main.m in Sources */,
-				37D373B51C9BA370005EB8DD /* TMNavigationController.m in Sources */,
 				37D373D01C9BAE5A005EB8DD /* ThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

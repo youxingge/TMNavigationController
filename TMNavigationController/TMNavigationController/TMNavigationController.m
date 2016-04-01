@@ -65,7 +65,6 @@
 }
 @end
 
-
 @implementation UIViewController (navigationBar)
 @dynamic navigationBar;
 @dynamic navigationBarHidden;
