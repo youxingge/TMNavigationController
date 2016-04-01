@@ -10,6 +10,7 @@
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #import "TMNavigationController.h"
 #import "objc/runtime.h"
+
 @interface navigationBarView ()
 @end
 @implementation navigationBarView
@@ -64,16 +65,12 @@
 }
 @end
 
-@interface UIViewController (navigationBar)
-@property (nonatomic,strong) navigationBarView *navigationBar;
-@property (nonatomic,getter=isNavigationBar)BOOL navigationBarHidden;
-@property(nonatomic,copy)NSString *title;
-@end
 
 @implementation UIViewController (navigationBar)
 @dynamic navigationBar;
 @dynamic navigationBarHidden;
 @dynamic title;
+
 -(navigationBarView *)navigationBar
 {
     return objc_getAssociatedObject(self, _cmd);
@@ -170,17 +167,6 @@
     [super didReceiveMemoryWarning];
 
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
 
 

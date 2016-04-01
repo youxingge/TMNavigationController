@@ -8,6 +8,8 @@
 
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
+#import "TMNavigationController.h"
+
 @interface SecondViewController ()
 
 @end
@@ -20,6 +22,7 @@
 }
 - (IBAction)push:(id)sender {
     ThirdViewController * vc = [ThirdViewController new];
+    vc.navigationBarHidden = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

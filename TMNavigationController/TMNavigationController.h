@@ -11,6 +11,7 @@
 
 @interface TMNavigationController : UINavigationController
 @end
+
 typedef void(^clickBackButton)(UIButton * button);
 @interface navigationBarView : UIView
 @property (copy ,nonatomic) clickBackButton click;
@@ -19,4 +20,10 @@ typedef void(^clickBackButton)(UIButton * button);
 @property (strong ,nonatomic)UILabel * titleLabel;
 @property (strong ,nonatomic)UIButton * backButton;
 -(instancetype)initWithFrame:(CGRect)frame;
+@end
+
+@interface UIViewController (navigationBar)
+@property (nonatomic,strong) navigationBarView *navigationBar;
+@property (nonatomic,getter=isNavigationBar)BOOL navigationBarHidden;
+@property(nonatomic,copy)NSString *title;
 @end
