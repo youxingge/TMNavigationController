@@ -22,7 +22,7 @@
 }
 - (IBAction)push:(id)sender {
     ThirdViewController * vc = [ThirdViewController new];
-//    vc.navigationBarHidden = YES;
+    vc.navigationBarHidden = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
