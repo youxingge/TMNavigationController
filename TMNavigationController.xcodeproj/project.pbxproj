@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37406B1B1CAFA2C0009EFFF7 /* left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37406B1A1CAFA2C0009EFFF7 /* left@2x.png */; };
 		374592A71CAE8C8600671361 /* TMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374592A61CAE8C8600671361 /* TMNavigationController.m */; };
 		37D373821C9BA345005EB8DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373811C9BA345005EB8DD /* main.m */; };
 		37D373851C9BA345005EB8DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373841C9BA345005EB8DD /* AppDelegate.m */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37406B1A1CAFA2C0009EFFF7 /* left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left@2x.png"; sourceTree = "<group>"; };
 		374592A51CAE8C8600671361 /* TMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMNavigationController.h; sourceTree = "<group>"; };
 		374592A61CAE8C8600671361 /* TMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMNavigationController.m; sourceTree = "<group>"; };
 		37D3737D1C9BA345005EB8DD /* TMNavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMNavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 		37D373801C9BA345005EB8DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				37406B1A1CAFA2C0009EFFF7 /* left@2x.png */,
 				37FB710A1C9EC14400BCAE54 /* 2@2x.png */,
 				37D373C61C9BA9AB005EB8DD /* 1@2x.gif */,
 				37D373811C9BA345005EB8DD /* main.m */,
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D373C71C9BA9AB005EB8DD /* 1@2x.gif in Resources */,
+				37406B1B1CAFA2C0009EFFF7 /* left@2x.png in Resources */,
 				37D373CC1C9BAD82005EB8DD /* SecondViewController.xib in Resources */,
 				37D373D11C9BAE5A005EB8DD /* ThirdViewController.xib in Resources */,
 				37D373901C9BA345005EB8DD /* LaunchScreen.storyboard in Resources */,
