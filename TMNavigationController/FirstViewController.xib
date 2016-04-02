@@ -16,7 +16,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Owa-Jz-DMB">
-                    <rect key="frame" x="126" y="190" width="46" height="30"/>
+                    <rect key="frame" x="126" y="64" width="46" height="156"/>
+                    <color key="backgroundColor" red="1" green="0.67550329976661327" blue="0.57125150138484204" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="push"/>
                     <connections>
                         <action selector="push:" destination="-1" eventType="touchUpInside" id="cd8-iC-AeL"/>
@@ -27,7 +28,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Owa-Jz-DMB" secondAttribute="bottom" constant="260" id="2hz-MW-gXU"/>
                 <constraint firstAttribute="trailing" secondItem="Owa-Jz-DMB" secondAttribute="trailing" constant="148" id="NYJ-LS-0Vf"/>
-                <constraint firstItem="Owa-Jz-DMB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="190" id="QJ2-w9-xRc"/>
+                <constraint firstItem="Owa-Jz-DMB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="QJ2-w9-xRc"/>
                 <constraint firstItem="Owa-Jz-DMB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="126" id="uKI-Sp-bEr"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

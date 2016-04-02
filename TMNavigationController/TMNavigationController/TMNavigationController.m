@@ -38,7 +38,6 @@
     return self;
 }
 -(void)backLastView:(UIButton*)button{
-    self.click(button);
     if (self.click) {
         self.click(button);
     }
