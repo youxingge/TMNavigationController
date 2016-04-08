@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372B4EC91CB7936D008AD22F /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372B4EC71CB7936D008AD22F /* FourthViewController.m */; };
+		372B4ECA1CB7936D008AD22F /* FourthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 372B4EC81CB7936D008AD22F /* FourthViewController.xib */; };
 		37406B1B1CAFA2C0009EFFF7 /* left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37406B1A1CAFA2C0009EFFF7 /* left@2x.png */; };
 		374592A71CAE8C8600671361 /* TMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374592A61CAE8C8600671361 /* TMNavigationController.m */; };
 		37D373821C9BA345005EB8DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373811C9BA345005EB8DD /* main.m */; };
@@ -45,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		372B4EC61CB7936D008AD22F /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		372B4EC71CB7936D008AD22F /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		372B4EC81CB7936D008AD22F /* FourthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthViewController.xib; sourceTree = "<group>"; };
 		37406B1A1CAFA2C0009EFFF7 /* left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left@2x.png"; sourceTree = "<group>"; };
 		374592A51CAE8C8600671361 /* TMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMNavigationController.h; sourceTree = "<group>"; };
 		374592A61CAE8C8600671361 /* TMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMNavigationController.m; sourceTree = "<group>"; };
@@ -148,6 +153,9 @@
 				37D373CD1C9BAE5A005EB8DD /* ThirdViewController.h */,
 				37D373CE1C9BAE5A005EB8DD /* ThirdViewController.m */,
 				37D373CF1C9BAE5A005EB8DD /* ThirdViewController.xib */,
+				372B4EC61CB7936D008AD22F /* FourthViewController.h */,
+				372B4EC71CB7936D008AD22F /* FourthViewController.m */,
+				372B4EC81CB7936D008AD22F /* FourthViewController.xib */,
 				37D373891C9BA345005EB8DD /* Main.storyboard */,
 				37D3738C1C9BA345005EB8DD /* Assets.xcassets */,
 				37D3738E1C9BA345005EB8DD /* LaunchScreen.storyboard */,
@@ -291,6 +299,7 @@
 			files = (
 				37D373C71C9BA9AB005EB8DD /* 1@2x.gif in Resources */,
 				37406B1B1CAFA2C0009EFFF7 /* left@2x.png in Resources */,
+				372B4ECA1CB7936D008AD22F /* FourthViewController.xib in Resources */,
 				37D373CC1C9BAD82005EB8DD /* SecondViewController.xib in Resources */,
 				37D373D11C9BAE5A005EB8DD /* ThirdViewController.xib in Resources */,
 				37D373901C9BA345005EB8DD /* LaunchScreen.storyboard in Resources */,
@@ -322,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372B4EC91CB7936D008AD22F /* FourthViewController.m in Sources */,
 				37D373CB1C9BAD82005EB8DD /* SecondViewController.m in Sources */,
 				37D373881C9BA345005EB8DD /* ViewController.m in Sources */,
 				37D373851C9BA345005EB8DD /* AppDelegate.m in Sources */,

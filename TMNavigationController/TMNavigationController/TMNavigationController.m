@@ -68,30 +68,30 @@
 @dynamic navigationBar;
 @dynamic navigationBarHidden;
 @dynamic title;
-
--(navigationBarView *)navigationBar
-{
+@dynamic navigationBarBackgroundColor;
+-(navigationBarView *)navigationBar{
     return objc_getAssociatedObject(self, _cmd);
 }
--(void)setNavigationBar:(navigationBarView *)navigationBar
-{
+-(void)setNavigationBar:(navigationBarView *)navigationBar{
     objc_setAssociatedObject(self, @selector(navigationBar), navigationBar, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
--(BOOL)isNavigationBar
-{
+-(BOOL)isNavigationBar{
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
--(void)setNavigationBarHidden:(BOOL)navigationBarHidden
-{
+-(void)setNavigationBarHidden:(BOOL)navigationBarHidden{
     objc_setAssociatedObject(self, @selector(isNavigationBar), @(navigationBarHidden), OBJC_ASSOCIATION_ASSIGN);
 }
--(NSString *)title
-{
+-(NSString *)title{
     return objc_getAssociatedObject(self, _cmd);
 }
--(void)setTitle:(NSString *)title
-{
+-(void)setTitle:(NSString *)title{
     objc_setAssociatedObject(self, @selector(title), title, OBJC_ASSOCIATION_COPY);
+}
+-(UIColor*)navigationBarBackgroundColor{
+    return objc_getAssociatedObject(self, _cmd);
+}
+-(void)setNavigationBarBackgroundColor:(UIColor *)navigationBarBackgroundColor{
+    objc_setAssociatedObject(self, @selector(navigationBarBackgroundColor), navigationBarBackgroundColor, OBJC_ASSOCIATION_RETAIN);
 }
 @end
 
@@ -151,6 +151,9 @@
     }
     if (viewController.navigationBarHidden) {
         bar.hidden = YES;
+    }
+    if (viewController.navigationBarBackgroundColor) {
+        bar.backgroundColor = viewController.navigationBarBackgroundColor;
     }
     bar.title = viewController.title;
     [super pushViewController:viewController animated:animated];

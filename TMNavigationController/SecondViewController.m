@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Second";
+    self.navigationBarBackgroundColor = [UIColor lightGrayColor];
 }
 - (IBAction)push:(id)sender {
     ThirdViewController * vc = [ThirdViewController new];

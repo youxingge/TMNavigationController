@@ -16,8 +16,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqk-SR-ly0">
-                    <rect key="frame" x="106" y="225" width="108" height="30"/>
-                    <state key="normal" title="无navigationbar"/>
+                    <rect key="frame" x="72" y="225" width="176" height="30"/>
+                    <state key="normal" title="无navigationbar 点击push"/>
+                    <connections>
+                        <action selector="push:" destination="-1" eventType="touchUpInside" id="rvP-Ek-5Xa"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

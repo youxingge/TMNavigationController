@@ -1,28 +1,24 @@
 //
-//  ThirdViewController.m
+//  FourthViewController.m
 //  TMNavigationController
 //
-//  Created by TianMing on 16/3/18.
+//  Created by TianMing on 16/4/8.
 //  Copyright © 2016年 TianMing. All rights reserved.
 //
 
-#import "ThirdViewController.h"
 #import "FourthViewController.h"
+#import "TMNavigationController.h"
 
-@interface ThirdViewController ()
+@interface FourthViewController ()
 
 @end
 
-@implementation ThirdViewController
+@implementation FourthViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Third";
-
-}
-- (IBAction)push:(id)sender {
-    FourthViewController * vc = [FourthViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+    self.title = @"Fourth";
+    self.navigationBarBackgroundColor = [UIColor greenColor];
 }
 
 - (void)didReceiveMemoryWarning {
