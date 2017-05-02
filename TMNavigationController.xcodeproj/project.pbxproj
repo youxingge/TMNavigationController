@@ -11,6 +11,7 @@
 		372B4ECA1CB7936D008AD22F /* FourthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 372B4EC81CB7936D008AD22F /* FourthViewController.xib */; };
 		37406B1B1CAFA2C0009EFFF7 /* left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37406B1A1CAFA2C0009EFFF7 /* left@2x.png */; };
 		374592A71CAE8C8600671361 /* TMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374592A61CAE8C8600671361 /* TMNavigationController.m */; };
+		37AE23E41EB853060042FF68 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37AE23E31EB853060042FF68 /* back@2x.png */; };
 		37D373821C9BA345005EB8DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373811C9BA345005EB8DD /* main.m */; };
 		37D373851C9BA345005EB8DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373841C9BA345005EB8DD /* AppDelegate.m */; };
 		37D373881C9BA345005EB8DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373871C9BA345005EB8DD /* ViewController.m */; };
@@ -53,6 +54,7 @@
 		37406B1A1CAFA2C0009EFFF7 /* left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left@2x.png"; sourceTree = "<group>"; };
 		374592A51CAE8C8600671361 /* TMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMNavigationController.h; sourceTree = "<group>"; };
 		374592A61CAE8C8600671361 /* TMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMNavigationController.m; sourceTree = "<group>"; };
+		37AE23E31EB853060042FF68 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		37D3737D1C9BA345005EB8DD /* TMNavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMNavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D373811C9BA345005EB8DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37D373831C9BA345005EB8DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		37D373801C9BA345005EB8DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				37AE23E31EB853060042FF68 /* back@2x.png */,
 				37406B1A1CAFA2C0009EFFF7 /* left@2x.png */,
 				37FB710A1C9EC14400BCAE54 /* 2@2x.png */,
 				37D373C61C9BA9AB005EB8DD /* 1@2x.gif */,
@@ -261,6 +264,7 @@
 				TargetAttributes = {
 					37D3737C1C9BA345005EB8DD = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 9A8BVY6Y33;
 					};
 					37D373951C9BA346005EB8DD = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -302,6 +306,7 @@
 				372B4ECA1CB7936D008AD22F /* FourthViewController.xib in Resources */,
 				37D373CC1C9BAD82005EB8DD /* SecondViewController.xib in Resources */,
 				37D373D11C9BAE5A005EB8DD /* ThirdViewController.xib in Resources */,
+				37AE23E41EB853060042FF68 /* back@2x.png in Resources */,
 				37D373901C9BA345005EB8DD /* LaunchScreen.storyboard in Resources */,
 				37FB710B1C9EC14400BCAE54 /* 2@2x.png in Resources */,
 				37D373BD1C9BA5AA005EB8DD /* FirstViewController.xib in Resources */,
@@ -479,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9A8BVY6Y33;
 				INFOPLIST_FILE = TMNavigationController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianming.TMNavigationController;
@@ -490,6 +496,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9A8BVY6Y33;
 				INFOPLIST_FILE = TMNavigationController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianming.TMNavigationController;

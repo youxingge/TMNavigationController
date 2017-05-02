@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Fourth";
-    self.navigationBarBackgroundColor = [UIColor greenColor];
+    self.navigationBarBackgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {

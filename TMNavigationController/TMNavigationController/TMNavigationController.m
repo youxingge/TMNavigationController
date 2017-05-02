@@ -15,10 +15,10 @@
 @end
 @implementation navigationBarView
 -(instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
     if (self) {
-        UIView * lineView = [[UIView alloc]initWithFrame:CGRectMake(0, frame.size.height-1, frame.size.width, 1)];
-        lineView.backgroundColor = [UIColor lightGrayColor];
+        UIView * lineView = [[UIView alloc]initWithFrame:CGRectMake(0,frame.size.height-0.5,frame.size.width,0.5)];
+        lineView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
         [self addSubview:lineView];
         _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2-100, 25, 200, 35)];
         _titleLabel.text = self.title;
@@ -28,7 +28,7 @@
         
         _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_backButton setImage:[UIImage imageNamed:@"left"] forState:UIControlStateNormal];
-        _backButton.frame = CGRectMake(10, 20, 100, 44);
+        _backButton.frame = CGRectMake(15, 20, 80, 44);
         [_backButton addTarget:self action:@selector(backLastView:) forControlEvents:UIControlEventTouchUpInside];
         [_backButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [_backButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
@@ -65,10 +65,15 @@
 @end
 
 @implementation UIViewController (navigationBar)
+
+static char  backButtonImageKey;
+
 @dynamic navigationBar;
 @dynamic navigationBarHidden;
 @dynamic title;
+@dynamic backButtonImage;
 @dynamic navigationBarBackgroundColor;
+
 -(navigationBarView *)navigationBar{
     return objc_getAssociatedObject(self, _cmd);
 }
@@ -93,6 +98,13 @@
 -(void)setNavigationBarBackgroundColor:(UIColor *)navigationBarBackgroundColor{
     objc_setAssociatedObject(self, @selector(navigationBarBackgroundColor), navigationBarBackgroundColor, OBJC_ASSOCIATION_RETAIN);
 }
+- (void)setBackButtonImage:(UIImage *)backButtonImage{
+    objc_setAssociatedObject(self, &backButtonImageKey, backButtonImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (UIImage*)backButtonImage{
+    return objc_getAssociatedObject(self, &backButtonImageKey);
+}
+
 @end
 
 @interface TMNavigationController ()<UIGestureRecognizerDelegate>
@@ -100,7 +112,6 @@
 @end
 
 @implementation TMNavigationController
-
 -(instancetype)initWithRootViewController:(UIViewController *)rootViewController{
     if (self = [super initWithRootViewController:rootViewController]) {
     }
@@ -116,7 +127,7 @@
 }
 -(void)createBarView{
     self.navigationBarHidden = YES;
-    self.barView  = [[navigationBarView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
+    self.barView  = [[navigationBarView alloc]init];
     [self.barView clickBackButton:^(UIButton *button) {
         [self popViewControllerAnimated:YES];
     }];
@@ -154,6 +165,9 @@
     }
     if (viewController.navigationBarBackgroundColor) {
         bar.backgroundColor = viewController.navigationBarBackgroundColor;
+    }
+    if (viewController.backButtonImage) {
+        [bar.backButton setImage:viewController.backButtonImage forState:UIControlStateNormal];
     }
     bar.title = viewController.title;
     [super pushViewController:viewController animated:animated];

@@ -25,7 +25,8 @@ typedef void(^clickBackButton)(UIButton * button);
 @interface UIViewController (navigationBar)
 @property (nonatomic,strong) navigationBarView *navigationBar;
 @property (nonatomic,getter=isNavigationBar)BOOL navigationBarHidden;
-@property(nonatomic,copy)NSString *title;
-@property (nonatomic,strong) UIColor * navigationBarBackgroundColor;
+@property (nonatomic,copy)NSString *title;
+@property (nonatomic,strong)UIImage *backButtonImage;
+@property (nonatomic,strong)UIColor *navigationBarBackgroundColor;
 
 @end

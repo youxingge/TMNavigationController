@@ -31,7 +31,7 @@
     _tabbar.viewControllers = @[nav1,nav2,nav3];
 }
 -(void)gotoWindow{
-    AppDelegate * app = [UIApplication sharedApplication].delegate;
+    AppDelegate * app = (AppDelegate*)[UIApplication sharedApplication].delegate;
     app.window.rootViewController = _tabbar;
 }
 - (void)didReceiveMemoryWarning {
