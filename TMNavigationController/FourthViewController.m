@@ -9,16 +9,21 @@
 #import "FourthViewController.h"
 #import "TMNavigationController.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @interface FourthViewController ()
 
 @end
 
 @implementation FourthViewController
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    // 设置渐变色后，设置背景颜色不起作用
+    [self setGradientBackgroundFromColor:UIColorFromRGB(0x12ace5) toColor:UIColorFromRGB(0x1e82d2)];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Fourth";
-    self.navigationBarBackgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {

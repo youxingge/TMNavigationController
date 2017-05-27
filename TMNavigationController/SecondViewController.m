@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Second";
-    self.navigationBarBackgroundColor = [UIColor lightGrayColor];
+    self.navigationBarBackgroundColor = [UIColor blueColor];
     self.backButtonImage = [UIImage imageNamed:@"back"];
 }
 - (IBAction)push:(id)sender {
