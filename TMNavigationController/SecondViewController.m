@@ -20,7 +20,7 @@
     [super viewDidLoad];
     self.title = @"Second";
     self.navigationBarBackgroundColor = [UIColor blueColor];
-    self.backButtonImage = [UIImage imageNamed:@"back"];
+    self.navigationBackButtonImage = [UIImage imageNamed:@"back"];
 }
 - (IBAction)push:(id)sender {
     ThirdViewController * vc = [ThirdViewController new];

@@ -19,7 +19,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     // 设置渐变色后，设置背景颜色不起作用
-    [self setGradientBackgroundFromColor:UIColorFromRGB(0x12ace5) toColor:UIColorFromRGB(0x1e82d2)];
+    [self setNavigationGradientBackgroundFromColor:UIColorFromRGB(0x12ace5) toColor:UIColorFromRGB(0x1e82d2)];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
