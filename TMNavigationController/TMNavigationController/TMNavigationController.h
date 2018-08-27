@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TMNavigationController : UINavigationController
+@property (strong , nonatomic) UIPanGestureRecognizer * panGesture;
+
 @end
 
 typedef void(^clickBackButton)(UIButton * button);
@@ -60,7 +62,7 @@ typedef void(^clickRightFirstButton)(UIButton * button);
 // 是否允许全屏滑动返回
 @property (nonatomic,assign)BOOL navigationCanDragBack;
 
-@property (nonatomic,strong) navigationBarView *navigationBar;
+@property (nonatomic,strong)navigationBarView *navigationBar;
 // 标题
 @property (nonatomic,copy)NSString *title;
 // 标题颜色
@@ -84,6 +86,7 @@ typedef void(^clickRightFirstButton)(UIButton * button);
 
 // 隐藏leftBar
 @property (nonatomic,assign)BOOL navigationLeftBarHidden;
+@property (nonatomic,strong)UIColor * navigationLeftBarTitleColor;
 
 
 // 隐藏rightFirstBar
@@ -116,4 +119,3 @@ typedef void(^clickRightFirstButton)(UIButton * button);
 
 
 @end
-

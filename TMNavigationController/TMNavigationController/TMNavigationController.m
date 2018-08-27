@@ -29,10 +29,9 @@
 
 
 
+
 @interface navigationBarView ()
 @end
-
-
 @implementation navigationBarView
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TopBarHeight)];
@@ -55,7 +54,7 @@
         _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _backButton.adjustsImageWhenHighlighted = NO;
         [_backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
-        _backButton.frame = CGRectMake(0, BR_StatusBarHeight, 52, 44);
+        _backButton.frame = CGRectMake(0, BR_StatusBarHeight-10, 62, 50);
         [_backButton addTarget:self action:@selector(backLastView:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_backButton];
         
@@ -63,7 +62,7 @@
         _leftButton.adjustsImageWhenHighlighted = NO;
         [_leftButton setTitle:@"关闭" forState:UIControlStateNormal];
         _leftButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        _leftButton.frame = CGRectMake(45, BR_StatusBarHeight, 50, TopBarHeight-BR_StatusBarHeight);
+        _leftButton.frame = CGRectMake(46, BR_StatusBarHeight, 50, TopBarHeight-BR_StatusBarHeight);
         [_leftButton addTarget:self action:@selector(closeAction:) forControlEvents:UIControlEventTouchUpInside];
         [_leftButton setTitleColor:UIColorFromRGB(0x27313e) forState:UIControlStateNormal];
         [_leftButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
@@ -226,11 +225,20 @@
 @dynamic navigationRightFirstBarTitleColor;
 @dynamic navigationBarBackgroundImage;
 @dynamic navigationRightBarRedButtonShow;
+@dynamic navigationLeftBarTitleColor;
+
 
 - (BOOL)navigationCanDragBack{
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 - (void)setNavigationCanDragBack:(BOOL)navigationCanDragBack{
+    TMNavigationController * nav = (TMNavigationController*)self.navigationController;
+    if (!navigationCanDragBack && nav) {
+        // 禁用返回手势
+        nav.panGesture.enabled = NO;
+    }else{
+        nav.panGesture.enabled = YES;
+    }
     objc_setAssociatedObject(self, @selector(navigationCanDragBack), @(navigationCanDragBack), OBJC_ASSOCIATION_ASSIGN);
 }
 - (navigationBarView *)navigationBar{
@@ -262,14 +270,12 @@
     // 当只有一个左侧返回按钮的时候，将按钮可触控范围增大
     if (navigationLeftBarHidden) {
         self.navigationBar.leftButton.hidden = YES;
-        self.navigationBar.backButton.frame = CGRectMake(20, BR_StatusBarHeight, 75, TopBarHeight-BR_StatusBarHeight);
-        [self.navigationBar.backButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-        [self.navigationBar.backButton setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+        self.navigationBar.backButton.frame = CGRectMake(5, BR_StatusBarHeight, 65, TopBarHeight-BR_StatusBarHeight);
+        [self.navigationBar.backButton setImageEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 35)];
     }else{
         self.navigationBar.leftButton.hidden = NO;
-        self.navigationBar.backButton.frame = CGRectMake(0, BR_StatusBarHeight, 52, TopBarHeight-BR_StatusBarHeight);
-        [self.navigationBar.backButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
-        [self.navigationBar.backButton setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+        self.navigationBar.backButton.frame = CGRectMake(0, BR_StatusBarHeight, 50, TopBarHeight-BR_StatusBarHeight);
+        [self.navigationBar.backButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     }
     objc_setAssociatedObject(self, @selector(navigationLeftBarHidden), @(navigationLeftBarHidden), OBJC_ASSOCIATION_ASSIGN);
 }
@@ -280,6 +286,16 @@
 - (void)setNavigationRightFirstBarHidden:(BOOL)navigationRightFirstBarHidden{
     objc_setAssociatedObject(self, @selector(navigationRightFirstBarHidden), @(navigationRightFirstBarHidden), OBJC_ASSOCIATION_ASSIGN);
 }
+- (UIColor*)navigationLeftBarTitleColor{
+    return objc_getAssociatedObject(self, _cmd);
+}
+- (void)setNavigationLeftBarTitleColor:(UIColor *)navigationLeftBarTitleColor{
+    if (navigationLeftBarTitleColor) {
+        [self.navigationBar.leftButton setTitleColor:navigationLeftBarTitleColor forState:UIControlStateNormal];
+    }
+    objc_setAssociatedObject(self, @selector(navigationLeftBarTitleColor), navigationLeftBarTitleColor, OBJC_ASSOCIATION_RETAIN);
+}
+
 - (BOOL)navigationRightFirstBarHidden{
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
@@ -478,13 +494,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationCanDragBack = YES;
+    [self addPopGesture];
 }
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    if (self.navigationCanDragBack) {
-        [self addPopGesture];
-    }
-}
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    if (self.navigationCanDragBack) {
+//    }
+//}
 - (void)createBarView{
     self.navigationBarHidden = YES;
     self.barView  = [[navigationBarView alloc]init];
@@ -508,6 +524,7 @@
     NSString * pop = @"handleNavigationTransition:";
     SEL popAction = NSSelectorFromString(pop);
     [pan addTarget:_UINavigationInteractiveTransition action:popAction];
+    self.panGesture = pan;
 }
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer{
     CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
