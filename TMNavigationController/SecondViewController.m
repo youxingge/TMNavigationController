@@ -19,12 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Second";
+    self.navigationBarTitleColor = [UIColor whiteColor];
     self.navigationBarBackgroundColor = [UIColor blueColor];
     self.navigationBackButtonImage = [UIImage imageNamed:@"back"];
 }
 - (IBAction)push:(id)sender {
     ThirdViewController * vc = [ThirdViewController new];
-    vc.navigationBarHidden = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

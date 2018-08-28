@@ -18,8 +18,14 @@
 @implementation FourthViewController
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.navigationCanDragBack = NO; // 不能全屏返回
     // 设置渐变色后，设置背景颜色不起作用
     [self setNavigationGradientBackgroundFromColor:UIColorFromRGB(0x12ace5) toColor:UIColorFromRGB(0x1e82d2)];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationCanDragBack = YES;
+
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

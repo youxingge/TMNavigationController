@@ -8,6 +8,7 @@
 
 #import "ThirdViewController.h"
 #import "FourthViewController.h"
+#import "TMNavigationController.h"
 
 @interface ThirdViewController ()
 
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Third";
-
+    self.navigationBarHidden = YES;
 }
 - (IBAction)push:(id)sender {
     FourthViewController * vc = [FourthViewController new];
