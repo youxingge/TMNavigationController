@@ -275,7 +275,7 @@
 }
 - (CGSize)getSizeWithString:(NSString*)string withFontCustom:(UIFont *)font{
     CGSize size = CGSizeMake(SCREEN_WIDTH/2, TM_TopBarHeight);
-    font == nil ? [UIFont systemFontOfSize:18] :font;
+    font == nil ? font = [UIFont systemFontOfSize:18] :font;
     CGRect frame =[string boundingRectWithSize:size options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:font}context:nil];
     return CGSizeMake(round(frame.size.width + 0.5), round(frame.size.height + 0.5));
 }

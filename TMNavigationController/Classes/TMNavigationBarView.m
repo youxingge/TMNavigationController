@@ -34,7 +34,7 @@
         
         _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _backButton.adjustsImageWhenHighlighted = NO;
-        [_backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+        [_backButton setImage:[UIImage imageNamed:@"tm_back"] forState:UIControlStateNormal];
         _backButton.frame = CGRectMake(0, TM_StatusBarHeight-10, 62, 50);
         [_backButton addTarget:self action:@selector(backLastView:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_backButton];
