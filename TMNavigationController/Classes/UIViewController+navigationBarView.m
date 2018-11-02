@@ -80,8 +80,10 @@
         self.navigationBar.leftButton.hidden = YES;
         self.navigationBar.backButton.frame = CGRectMake(5, TM_StatusBarHeight, 65, TM_TopBarHeight-TM_StatusBarHeight);
         [self.navigationBar.backButton setImageEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 35)];
+        [self.navigationBar.titleLabel setFrame:CGRectMake(50, TM_StatusBarHeight, SCREEN_WIDTH - 90, 44)];
     }else{
         self.navigationBar.leftButton.hidden = NO;
+        [self.navigationBar.titleLabel setFrame:CGRectMake(82, TM_StatusBarHeight, SCREEN_WIDTH - 88-50, 44)];
         self.navigationBar.backButton.frame = CGRectMake(0, TM_StatusBarHeight, 50, TM_TopBarHeight-TM_StatusBarHeight);
         [self.navigationBar.backButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     }
@@ -89,18 +91,6 @@
 }
 - (BOOL)navigationLeftBarHidden{
     return [objc_getAssociatedObject(self, _cmd) boolValue];
-}
-
-- (BOOL)navigationRightFirstBarHidden{
-    return [objc_getAssociatedObject(self, _cmd) boolValue];
-}
-- (void)setNavigationRightFirstBarHidden:(BOOL)navigationRightFirstBarHidden{
-    if (navigationRightFirstBarHidden) {
-        self.navigationBar.rightFirstButton.hidden = YES;
-    }else{
-        self.navigationBar.rightFirstButton.hidden = NO;
-    }
-    objc_setAssociatedObject(self, @selector(navigationRightFirstBarHidden), @(navigationRightFirstBarHidden), OBJC_ASSOCIATION_ASSIGN);
 }
 - (UIColor*)navigationLeftBarTitleColor{
     return objc_getAssociatedObject(self, _cmd);
@@ -115,6 +105,7 @@
 - (void)setNavigationRightBarHidden:(BOOL)navigationRightBarHidden{
     if (navigationRightBarHidden == NO) {
         self.navigationBar.rightButton.hidden = NO;
+        self.navigationBar.rightButton.frame = CGRectMake(SCREEN_WIDTH-60, TM_StatusBarHeight, 55, TM_TopBarHeight-TM_StatusBarHeight);
     } else{
         self.navigationBar.rightButton.hidden = YES;
     }
@@ -124,28 +115,44 @@
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
-
 - (NSString*)navigationRightBarTitle{
     return objc_getAssociatedObject(self, _cmd);
 }
 - (void)setNavigationRightBarTitle:(NSString *)navigationRightBarTitle{
     if (navigationRightBarTitle) {
-        UIFont * font = self.navigationBar.rightButton.titleLabel.font;
-        CGFloat width = [self getSizeWithString:navigationRightBarTitle withFontCustom:font].width;
         [self.navigationBar.rightButton setTitle:navigationRightBarTitle forState:UIControlStateNormal];
-        self.navigationBar.rightButton.frame = CGRectMake(SCREEN_WIDTH-width-5, TM_StatusBarHeight, width, TM_TopBarHeight-TM_StatusBarHeight);
     }
     objc_setAssociatedObject(self, @selector(navigationRightBarTitle), navigationRightBarTitle, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (BOOL)navigationRightFirstBarHidden{
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+- (void)setNavigationRightFirstBarHidden:(BOOL)navigationRightFirstBarHidden{
+    if (navigationRightFirstBarHidden) {
+        self.navigationBar.rightFirstButton.hidden = YES;
+        if (self.navigationLeftBarHidden) {
+            [self.navigationBar.titleLabel setFrame:CGRectMake(45, TM_StatusBarHeight, SCREEN_WIDTH - 100, 44)];
+        }else{
+            [self.navigationBar.titleLabel setFrame:CGRectMake(80, TM_StatusBarHeight, SCREEN_WIDTH - 90-50, 44)];
+        }
+    }else{
+        self.navigationBar.rightFirstButton.hidden = NO;
+        self.navigationBar.rightFirstButton.frame = CGRectMake(SCREEN_WIDTH-44-70, TM_StatusBarHeight, 55, TM_TopBarHeight-TM_StatusBarHeight);
+        if (self.navigationLeftBarHidden) {
+            [self.navigationBar.titleLabel setFrame:CGRectMake(45, TM_StatusBarHeight, SCREEN_WIDTH - 100-50, 44)];
+        }else{
+            [self.navigationBar.titleLabel setFrame:CGRectMake(90, TM_StatusBarHeight, SCREEN_WIDTH - 90-50, 44)];
+        }
+    }
+    objc_setAssociatedObject(self, @selector(navigationRightFirstBarHidden), @(navigationRightFirstBarHidden), OBJC_ASSOCIATION_ASSIGN);
 }
 - (NSString*)navigationRightFirstBarTitle{
     return objc_getAssociatedObject(self, _cmd);
 }
 - (void)setNavigationRightFirstBarTitle:(NSString *)navigationRightFirstBarTitle{
     if (navigationRightFirstBarTitle) {
-        UIFont * font = self.navigationBar.rightFirstButton.titleLabel.font;
-        CGFloat width = [self getSizeWithString:navigationRightFirstBarTitle withFontCustom:font].width;
         [self.navigationBar.rightFirstButton setTitle:navigationRightFirstBarTitle forState:UIControlStateNormal];
-        self.navigationBar.rightFirstButton.frame = CGRectMake(SCREEN_WIDTH-width-5 - 75, TM_StatusBarHeight, width, TM_TopBarHeight-TM_StatusBarHeight);
     }
     objc_setAssociatedObject(self, @selector(navigationRightFirstBarTitle), navigationRightFirstBarTitle, OBJC_ASSOCIATION_RETAIN);
 }
@@ -273,11 +280,6 @@
         view.alpha = alpha;
     }
 }
-- (CGSize)getSizeWithString:(NSString*)string withFontCustom:(UIFont *)font{
-    CGSize size = CGSizeMake(SCREEN_WIDTH/2, TM_TopBarHeight);
-    font == nil ? font = [UIFont systemFontOfSize:18] :font;
-    CGRect frame =[string boundingRectWithSize:size options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:font}context:nil];
-    return CGSizeMake(round(frame.size.width + 0.5), round(frame.size.height + 0.5));
-}
+
 
 @end

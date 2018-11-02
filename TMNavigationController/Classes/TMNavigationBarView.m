@@ -58,8 +58,8 @@
         _rightButton.frame = CGRectMake(SCREEN_WIDTH-70, TM_StatusBarHeight, 54, TM_TopBarHeight-TM_StatusBarHeight);
         [_rightButton addTarget:self action:@selector(rightAction:) forControlEvents:UIControlEventTouchUpInside];
         [_rightButton setTitleColor:UIColorFromRGB(0x27313e) forState:UIControlStateNormal];
-        [_rightButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
-        [_rightButton setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+//        [_rightButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+//        [_rightButton setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
         [self addSubview:_rightButton];
         
         _rightRedButton = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -15,13 +15,26 @@
 @end
 
 @implementation SecondViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.title = @"Second";
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     self.navigationBarTitleColor = [UIColor whiteColor];
     self.navigationBarBackgroundColor = [UIColor blueColor];
     self.navigationBackButtonImage = [UIImage imageNamed:@"back"];
+//    self.navigationRightFirstBarHidden = NO;
+//    self.navigationRightFirstBarTitle = @"分享";
+//    self.navigationRightFirstBarTitleColor = [UIColor whiteColor];
+//    self.navigationRightBarHidden = NO;
+//    self.navigationRightBarTitle = @"右边";
+//    self.navigationRightBarTitleColor = [UIColor whiteColor];
+    
+//    self.navigationLeftBarHidden = NO;
+//    self.navigationLeftBarTitleColor = [UIColor whiteColor];
+    
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"SecondSecondSecondSecondSecondSecondSecondSecondSecond";
+   
 }
 - (IBAction)push:(id)sender {
     ThirdViewController * vc = [ThirdViewController new];
