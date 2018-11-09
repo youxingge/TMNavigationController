@@ -19,14 +19,18 @@
     [super viewWillAppear:animated];
     self.navigationBarTitleColor = [UIColor whiteColor];
     self.navigationBarBackgroundColor = [UIColor blueColor];
-    self.navigationBackButtonImage = [UIImage imageNamed:@"back"];
+    self.navigationBackButtonImage = [UIImage imageNamed:@"tm_back"];
+    
+
 //    self.navigationRightFirstBarHidden = NO;
 //    self.navigationRightFirstBarTitle = @"分享";
 //    self.navigationRightFirstBarTitleColor = [UIColor whiteColor];
-//    self.navigationRightBarHidden = NO;
-//    self.navigationRightBarTitle = @"右边";
-//    self.navigationRightBarTitleColor = [UIColor whiteColor];
     
+    self.navigationRightBarHidden = NO;
+    self.navigationRightBarTitle = @"右边啊";
+    self.navigationRightBarTitleColor = [UIColor whiteColor];
+//    self.navigationRightBarImage = [UIImage imageNamed:@"tm_back"];
+
 //    self.navigationLeftBarHidden = NO;
 //    self.navigationLeftBarTitleColor = [UIColor whiteColor];
     
