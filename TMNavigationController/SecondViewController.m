@@ -33,10 +33,10 @@
 
 //    self.navigationLeftBarHidden = NO;
 //    self.navigationLeftBarTitleColor = [UIColor whiteColor];
-    
+    kWEAK_SELF
     [self navigationRightButtonClickBlock:^(UIButton * button) {
         NSLog(@"ddddddd");
-        self.title = @"right";
+        weakSelf.title = @"right";
     }];
    
 

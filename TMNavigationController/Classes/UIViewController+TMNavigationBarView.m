@@ -322,4 +322,5 @@
         self.navigationBar.rightFirstClick = [block copy];
     }
 }
+
 @end

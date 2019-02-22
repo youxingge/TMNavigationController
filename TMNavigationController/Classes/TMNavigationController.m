@@ -10,7 +10,7 @@
 
 
 @interface TMNavigationController ()<UIGestureRecognizerDelegate>
-@property (strong , nonatomic) TMNavigationBarView * barView;
+
 @end
 
 @implementation TMNavigationController
@@ -64,20 +64,20 @@
     return YES;
 }
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    self.barView = [[TMNavigationBarView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TM_TopBarHeight)];
-    viewController.navigationBar = self.barView;
-    [viewController.view addSubview:self.barView];
+    TMNavigationBarView * barView = [[TMNavigationBarView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TM_TopBarHeight)];
+    viewController.navigationBar =  barView;
+    [viewController.view addSubview: barView];
     kWEAK_SELF
-    [self.barView clickBackButton:^(UIButton *button) {
+    [barView clickBackButton:^(UIButton *button) {
         [weakSelf popViewControllerAnimated:YES];
     }];
     if (self.viewControllers.count==0) {
-        self.barView.backButton.hidden = YES;
+        barView.backButton.hidden = YES;
     }
     if (self.viewControllers.count>0){
         viewController.hidesBottomBarWhenPushed = YES;
     }
-    [self setPropertyWithViewController:viewController];
+    [self setPropertyWithViewController:viewController barView:barView];
    
     // 设置渐变色后，设置背景颜色不起作用
 // [viewController setGradientBackgroundFromColor:UIColorFromRGB(0x12ace5) toColor:UIColorFromRGB(0x1e82d2)];
@@ -91,13 +91,13 @@
     self.tabBarController.tabBar.frame = frame;
     
 }
-- (void)setPropertyWithViewController:(UIViewController*)viewController{
-    self.barView.title = viewController.title;
-    self.barView.hidden = viewController.navigationBarHidden;
-    self.barView.myBackgroundImage = viewController.navigationBarBackgroundImage;
-    self.barView.myBackgroundColor = viewController.navigationBarBackgroundColor;
-    self.barView.myTitleColor = viewController.navigationBarTitleColor;
-    self.barView.myBottomLineColor = viewController.navigationBarBottomLineBackgroundColor;
+- (void)setPropertyWithViewController:(UIViewController*)viewController barView:(TMNavigationBarView *)barView{
+    barView.title = viewController.title;
+    barView.hidden = viewController.navigationBarHidden;
+    barView.myBackgroundImage = viewController.navigationBarBackgroundImage;
+    barView.myBackgroundColor = viewController.navigationBarBackgroundColor;
+    barView.myTitleColor = viewController.navigationBarTitleColor;
+    barView.myBottomLineColor = viewController.navigationBarBottomLineBackgroundColor;
     
     
     // 默认 左边第二个按钮隐藏、右边按钮隐藏
