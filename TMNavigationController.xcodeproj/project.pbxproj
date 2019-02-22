@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		372B4EC91CB7936D008AD22F /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372B4EC71CB7936D008AD22F /* FourthViewController.m */; };
 		372B4ECA1CB7936D008AD22F /* FourthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 372B4EC81CB7936D008AD22F /* FourthViewController.xib */; };
+		372C8598221FDBD60003DDBE /* UIViewController+TMNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C8597221FDBD60003DDBE /* UIViewController+TMNavigationBarView.m */; };
 		373DAA452170DD79005F8659 /* tm_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 373DAA442170DD78005F8659 /* tm_back@2x.png */; };
 		37406B1B1CAFA2C0009EFFF7 /* left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37406B1A1CAFA2C0009EFFF7 /* left@2x.png */; };
-		3776114D213401DB0063BC84 /* TMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3776114B213401DB0063BC84 /* TMNavigationController.m */; };
-		3776115021341CDE0063BC84 /* TMNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3776114F21341CDE0063BC84 /* TMNavigationBarView.m */; };
-		3776115321341D810063BC84 /* UIViewController+navigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3776115221341D810063BC84 /* UIViewController+navigationBarView.m */; };
+		37D29AD4221EBCAC00F84547 /* TMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D29ACD221EBCAC00F84547 /* TMNavigationController.m */; };
+		37D29AD6221EBCAC00F84547 /* TMNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D29AD1221EBCAC00F84547 /* TMNavigationBarView.m */; };
 		37D373821C9BA345005EB8DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373811C9BA345005EB8DD /* main.m */; };
 		37D373851C9BA345005EB8DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373841C9BA345005EB8DD /* AppDelegate.m */; };
 		37D373881C9BA345005EB8DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373871C9BA345005EB8DD /* ViewController.m */; };
@@ -53,15 +53,15 @@
 		372B4EC61CB7936D008AD22F /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		372B4EC71CB7936D008AD22F /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		372B4EC81CB7936D008AD22F /* FourthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthViewController.xib; sourceTree = "<group>"; };
+		372C8596221FDBD60003DDBE /* UIViewController+TMNavigationBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TMNavigationBarView.h"; sourceTree = "<group>"; };
+		372C8597221FDBD60003DDBE /* UIViewController+TMNavigationBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TMNavigationBarView.m"; sourceTree = "<group>"; };
 		373DAA442170DD78005F8659 /* tm_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tm_back@2x.png"; sourceTree = "<group>"; };
 		37406B1A1CAFA2C0009EFFF7 /* left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left@2x.png"; sourceTree = "<group>"; };
-		3776114B213401DB0063BC84 /* TMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMNavigationController.m; sourceTree = "<group>"; };
-		3776114C213401DB0063BC84 /* TMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMNavigationController.h; sourceTree = "<group>"; };
-		3776114E21341CDE0063BC84 /* TMNavigationBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMNavigationBarView.h; sourceTree = "<group>"; };
-		3776114F21341CDE0063BC84 /* TMNavigationBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMNavigationBarView.m; sourceTree = "<group>"; };
-		3776115121341D810063BC84 /* UIViewController+navigationBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+navigationBarView.h"; sourceTree = "<group>"; };
-		3776115221341D810063BC84 /* UIViewController+navigationBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+navigationBarView.m"; sourceTree = "<group>"; };
-		3776115421341FF50063BC84 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		37D29ACD221EBCAC00F84547 /* TMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMNavigationController.m; sourceTree = "<group>"; };
+		37D29ACF221EBCAC00F84547 /* TMNavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMNavigationBarView.h; sourceTree = "<group>"; };
+		37D29AD0221EBCAC00F84547 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		37D29AD1221EBCAC00F84547 /* TMNavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMNavigationBarView.m; sourceTree = "<group>"; };
+		37D29AD3221EBCAC00F84547 /* TMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMNavigationController.h; sourceTree = "<group>"; };
 		37D3737D1C9BA345005EB8DD /* TMNavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMNavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D373811C9BA345005EB8DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37D373831C9BA345005EB8DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -116,16 +116,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3776114A213401DB0063BC84 /* Classes */ = {
+		37D29ACC221EBCAC00F84547 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3776114C213401DB0063BC84 /* TMNavigationController.h */,
-				3776114B213401DB0063BC84 /* TMNavigationController.m */,
-				3776114E21341CDE0063BC84 /* TMNavigationBarView.h */,
-				3776114F21341CDE0063BC84 /* TMNavigationBarView.m */,
-				3776115121341D810063BC84 /* UIViewController+navigationBarView.h */,
-				3776115221341D810063BC84 /* UIViewController+navigationBarView.m */,
-				3776115421341FF50063BC84 /* Macro.h */,
+				372C8596221FDBD60003DDBE /* UIViewController+TMNavigationBarView.h */,
+				372C8597221FDBD60003DDBE /* UIViewController+TMNavigationBarView.m */,
+				37D29ACF221EBCAC00F84547 /* TMNavigationBarView.h */,
+				37D29AD1221EBCAC00F84547 /* TMNavigationBarView.m */,
+				37D29AD3221EBCAC00F84547 /* TMNavigationController.h */,
+				37D29ACD221EBCAC00F84547 /* TMNavigationController.m */,
+				37D29AD0221EBCAC00F84547 /* Macro.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -153,7 +153,7 @@
 		37D3737F1C9BA345005EB8DD /* TMNavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				3776114A213401DB0063BC84 /* Classes */,
+				37D29ACC221EBCAC00F84547 /* Classes */,
 				37D373831C9BA345005EB8DD /* AppDelegate.h */,
 				37D373841C9BA345005EB8DD /* AppDelegate.m */,
 				37D373861C9BA345005EB8DD /* ViewController.h */,
@@ -348,15 +348,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3776114D213401DB0063BC84 /* TMNavigationController.m in Sources */,
+				37D29AD4221EBCAC00F84547 /* TMNavigationController.m in Sources */,
 				372B4EC91CB7936D008AD22F /* FourthViewController.m in Sources */,
 				37D373CB1C9BAD82005EB8DD /* SecondViewController.m in Sources */,
-				3776115321341D810063BC84 /* UIViewController+navigationBarView.m in Sources */,
 				37D373881C9BA345005EB8DD /* ViewController.m in Sources */,
+				372C8598221FDBD60003DDBE /* UIViewController+TMNavigationBarView.m in Sources */,
 				37D373851C9BA345005EB8DD /* AppDelegate.m in Sources */,
 				37D373BC1C9BA5AA005EB8DD /* FirstViewController.m in Sources */,
+				37D29AD6221EBCAC00F84547 /* TMNavigationBarView.m in Sources */,
 				37D373821C9BA345005EB8DD /* main.m in Sources */,
-				3776115021341CDE0063BC84 /* TMNavigationBarView.m in Sources */,
 				37D373D01C9BAE5A005EB8DD /* ThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

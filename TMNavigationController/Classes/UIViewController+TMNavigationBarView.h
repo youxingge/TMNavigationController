@@ -1,27 +1,28 @@
 //
-//  UIViewController+navigationBarView.h
+//  UIViewController+TMNavigationBarView.h
 //  TMNavigationController
 //
-//  Created by TianMing on 2018/8/27.
-//  Copyright © 2018年 TianMing. All rights reserved.
+//  Created by TianMing on 2019/2/22.
+//  Copyright © 2019 TianMing. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "TMNavigationBarView.h"
 
-@interface UIViewController (navigationBar)
+NS_ASSUME_NONNULL_BEGIN
 
+@interface UIViewController (TMNavigationBarView)
 // 是否允许全屏滑动返回
 @property (nonatomic,assign)BOOL navigationCanDragBack;
 // 顶部导航
 @property (nonatomic,strong)TMNavigationBarView *navigationBar;
 // 标题
-@property (nonatomic,copy)NSString *title;
+@property (nonatomic,copy)NSString* title;
 // 标题颜色
-@property (nonatomic,copy)UIColor *navigationBarTitleColor;
+@property (nonatomic,copy)UIColor* navigationBarTitleColor;
 
 // 设置navigationBar的颜色
-@property (nonatomic,strong)UIColor *navigationBarBackgroundColor;
+@property (nonatomic,strong)UIColor* navigationBarBackgroundColor;
 // 设置navigationBar背景图
 @property (nonatomic,strong)UIImage *navigationBarBackgroundImage;
 
@@ -66,7 +67,14 @@
 // 设置导航透明度
 - (void)setNavigationBarAlpha:(CGFloat)alpha;
 
+- (void)navigationBackButtonClickBlock:(void (^)(UIButton* button))block;
+- (void)navigationLeftButtonClickBlock:(void (^)(UIButton* button))block;
+- (void)navigationRightButtonClickBlock:(void (^)(UIButton* button))block;
+- (void)navigationRightFirstButtonClickBlock:(void (^)(UIButton* button))block;
+
+
 
 
 @end
 
+NS_ASSUME_NONNULL_END

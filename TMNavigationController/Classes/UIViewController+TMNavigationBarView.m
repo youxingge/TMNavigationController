@@ -1,16 +1,15 @@
 //
-//  UIViewController+navigationBarView.m
+//  UIViewController+TMNavigationBarView.m
 //  TMNavigationController
 //
-//  Created by TianMing on 2018/8/27.
-//  Copyright © 2018年 TianMing. All rights reserved.
+//  Created by TianMing on 2019/2/22.
+//  Copyright © 2019 TianMing. All rights reserved.
 //
 
-#import "UIViewController+navigationBarView.h"
+#import "UIViewController+TMNavigationBarView.h"
 #import "TMNavigationController.h"
 
-
-@implementation UIViewController (navigationBar)
+@implementation UIViewController (TMNavigationBarView)
 
 @dynamic navigationCanDragBack;
 @dynamic navigationRightBarImage;
@@ -303,4 +302,24 @@
     return CGSizeMake(round(frame.size.width + 0.5), round(frame.size.height + 0.5));
 }
 
+- (void)navigationBackButtonClickBlock:(void (^)(UIButton* button))block{
+    if (self.navigationBar) {
+        self.navigationBar.click = [block copy];
+    }
+}
+- (void)navigationLeftButtonClickBlock:(void (^)(UIButton* button))block{
+    if (self.navigationBar) {
+        self.navigationBar.leftClick = [block copy];
+    }
+}
+- (void)navigationRightButtonClickBlock:(void (^)(UIButton* button))block{
+    if (self.navigationBar) {
+        self.navigationBar.rightClick = [block copy];
+    }
+}
+- (void)navigationRightFirstButtonClickBlock:(void (^)(UIButton* button))block{
+    if (self.navigationBar) {
+        self.navigationBar.rightFirstClick = [block copy];
+    }
+}
 @end

@@ -34,11 +34,27 @@
 //    self.navigationLeftBarHidden = NO;
 //    self.navigationLeftBarTitleColor = [UIColor whiteColor];
     
+    [self navigationRightButtonClickBlock:^(UIButton * button) {
+        NSLog(@"ddddddd");
+        self.title = @"right";
+    }];
+   
+
+}
+//- (void)viewDidDisappear:(BOOL)animated{
+//    [super viewDidDisappear:animated];
+//    self.navigationNeedFullGesture = YES;
+//}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+//    self.navigationNeedFullGesture = YES;
+
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"SecondSecondSecondSecondSecondSecondSecondSecondSecond";
-   
+//    self.navigationNeedFullGesture = NO;
+
 }
 - (IBAction)push:(id)sender {
     ThirdViewController * vc = [ThirdViewController new];

@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "objc/runtime.h"
 #import "TMNavigationBarView.h"
-#import "UIViewController+navigationBarView.h"
+#import "UIViewController+TMNavigationBarView.h"
 #import "Macro.h"
 
 @interface TMNavigationController : UINavigationController

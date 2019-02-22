@@ -25,6 +25,7 @@
 #define TM_TabbarHeight         ((TM_iPhoneX||TM_iPhoneXr||TM_iPhoneXsMax) ? (49.f+34.f) : 49.f)
 #define TM_TabbarSafeBottomMargin      ((TM_iPhoneX||TM_iPhoneXr||TM_iPhoneXsMax) ? 34.f : 0.f)
 
+#define kWEAK_SELF __weak typeof(self) weakSelf = self;
 
 
 #endif /* Macro_h */

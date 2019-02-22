@@ -33,8 +33,9 @@
 - (void)createBarView{
     self.navigationBarHidden = YES;
     TMNavigationBarView * barView  = [[TMNavigationBarView alloc]init];
+    kWEAK_SELF
     [barView clickBackButton:^(UIButton *button) {
-        [self popViewControllerAnimated:YES];
+        [weakSelf popViewControllerAnimated:YES];
     }];
     [self.topViewController.view addSubview:barView];
     barView.title = self.topViewController.title;
@@ -64,16 +65,16 @@
 }
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     self.barView = [[TMNavigationBarView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TM_TopBarHeight)];
-    [viewController.view addSubview:self.barView];
     viewController.navigationBar = self.barView;
-
+    [viewController.view addSubview:self.barView];
+    kWEAK_SELF
     [self.barView clickBackButton:^(UIButton *button) {
-        [self popViewControllerAnimated:YES];
+        [weakSelf popViewControllerAnimated:YES];
     }];
     if (self.viewControllers.count==0) {
         self.barView.backButton.hidden = YES;
     }
-    if(self.viewControllers.count>0){
+    if (self.viewControllers.count>0){
         viewController.hidesBottomBarWhenPushed = YES;
     }
     [self setPropertyWithViewController:viewController];
