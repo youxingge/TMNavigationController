@@ -127,7 +127,6 @@
 				89D812E627F54C7063236B13 /* Pods-TMNavigationController.debug.xcconfig */,
 				D2D41A8377F51BD2318F17DA /* Pods-TMNavigationController.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -302,7 +301,7 @@
 				TargetAttributes = {
 					37D3737C1C9BA345005EB8DD = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 9A8BVY6Y33;
+						DevelopmentTeam = 3MGUNU3ZAJ;
 					};
 					37D373951C9BA346005EB8DD = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -319,6 +318,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -550,7 +550,7 @@
 			baseConfigurationReference = 89D812E627F54C7063236B13 /* Pods-TMNavigationController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9A8BVY6Y33;
+				DEVELOPMENT_TEAM = 3MGUNU3ZAJ;
 				INFOPLIST_FILE = TMNavigationController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianming.TMNavigationController;
@@ -563,7 +563,7 @@
 			baseConfigurationReference = D2D41A8377F51BD2318F17DA /* Pods-TMNavigationController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9A8BVY6Y33;
+				DEVELOPMENT_TEAM = 3MGUNU3ZAJ;
 				INFOPLIST_FILE = TMNavigationController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianming.TMNavigationController;
