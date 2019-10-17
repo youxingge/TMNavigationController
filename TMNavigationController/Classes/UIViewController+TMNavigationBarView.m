@@ -39,11 +39,15 @@
     
     if ([self.navigationController isKindOfClass:[TMNavigationController class]]) {
         TMNavigationController * nav = (TMNavigationController*)self.navigationController;
-        if (!navigationCanDragBack && nav && nav.panGesture) {
-            // 禁用返回手势
-            nav.panGesture.enabled = NO;
-        }else{
-            nav.panGesture.enabled = YES;
+        if (nav && [nav isKindOfClass:TMNavigationController.class]) {
+            if (nav.panGesture) {
+                if (!navigationCanDragBack ) {
+                    // 禁用返回手势
+                    nav.panGesture.enabled = NO;
+                }else{
+                    nav.panGesture.enabled = YES;
+                }
+            }
         }
     }
     objc_setAssociatedObject(self, @selector(navigationCanDragBack), @(navigationCanDragBack), OBJC_ASSOCIATION_ASSIGN);
