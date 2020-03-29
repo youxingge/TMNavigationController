@@ -17,6 +17,7 @@
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController{
     if (self = [super initWithRootViewController:rootViewController]) {
+//        NSLog(@"%@",rootViewController.childViewControllers);
     }
     return self;
 }
@@ -30,7 +31,7 @@
     [super viewDidLoad];
 }
 
-- (void)createBarView{
+- (void)createBarView {
     self.navigationBarHidden = YES;
     TMNavigationBarView * barView  = [[TMNavigationBarView alloc]init];
     kWEAK_SELF
@@ -43,7 +44,7 @@
         barView.backButton.hidden = YES;
     }
 }
-- (void)addPopGesture{
+- (void)addPopGesture {
     self.interactivePopGestureRecognizer.enabled = NO;
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]init];
     pan.delegate = self;
@@ -63,27 +64,25 @@
     }
     return YES;
 }
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    TMNavigationBarView * barView = [[TMNavigationBarView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TM_TopBarHeight)];
-    viewController.navigationBar =  barView;
-    [viewController.view addSubview: barView];
-    kWEAK_SELF
-    [barView clickBackButton:^(UIButton *button) {
-        [weakSelf popViewControllerAnimated:YES];
-    }];
-    if (self.viewControllers.count==0) {
-        barView.backButton.hidden = YES;
-    }
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.viewControllers.count>0){
         viewController.hidesBottomBarWhenPushed = YES;
     }
+    [super pushViewController:viewController animated:animated];
+
+    TMNavigationBarView * barView = [[TMNavigationBarView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TM_TopBarHeight)];
+    viewController.navigationBar =  barView;
+    [viewController.view addSubview: barView];
+   
+    if (self.viewControllers.count==1) {
+        barView.backButton.hidden = YES;
+    }
+    
     [self setPropertyWithViewController:viewController barView:barView];
    
     // 设置渐变色后，设置背景颜色不起作用
 // [viewController setGradientBackgroundFromColor:UIColorFromRGB(0x12ace5) toColor:UIColorFromRGB(0x1e82d2)];
-    
-    [super pushViewController:viewController animated:animated];
-    
+        
     CGRect frame = self.tabBarController.tabBar.frame;
     // 设置frame的y值, y = 屏幕高度 - tabBar高度
     frame.origin.y = SCREEN_HEIGHT - frame.size.height;
@@ -98,8 +97,11 @@
     barView.myBackgroundColor = viewController.navigationBarBackgroundColor;
     barView.myTitleColor = viewController.navigationBarTitleColor;
     barView.myBottomLineColor = viewController.navigationBarBottomLineBackgroundColor;
-    
-    
+    // 默认点击返回方法
+    kWEAK_SELF
+    [barView clickBackButton:^(UIButton *button) {
+        [weakSelf popViewControllerAnimated:YES];
+    }];
     // 默认 左边第二个按钮隐藏、右边按钮隐藏
     viewController.navigationLeftBarHidden = YES;
     viewController.navigationRightBarHidden = YES;
@@ -107,7 +109,7 @@
     viewController.navigationRightBarRedButtonShow = NO;
     
 }
-- (UIViewController*)popViewControllerAnimated:(BOOL)animated{
+- (UIViewController*)popViewControllerAnimated:(BOOL)animated {
     return [super popViewControllerAnimated:animated];
 }
 
