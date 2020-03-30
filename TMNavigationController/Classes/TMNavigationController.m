@@ -82,12 +82,6 @@
    
     // 设置渐变色后，设置背景颜色不起作用
 // [viewController setGradientBackgroundFromColor:UIColorFromRGB(0x12ace5) toColor:UIColorFromRGB(0x1e82d2)];
-        
-    CGRect frame = self.tabBarController.tabBar.frame;
-    // 设置frame的y值, y = 屏幕高度 - tabBar高度
-    frame.origin.y = SCREEN_HEIGHT - frame.size.height;
-    // 修改tabBar的frame
-    self.tabBarController.tabBar.frame = frame;
     
 }
 - (void)setPropertyWithViewController:(UIViewController*)viewController barView:(TMNavigationBarView *)barView{
