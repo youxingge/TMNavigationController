@@ -9,7 +9,9 @@
 #import "TMNavigationController.h"
 
 
-@interface TMNavigationController ()<UIGestureRecognizerDelegate>
+@interface TMNavigationController () <UIGestureRecognizerDelegate,UINavigationControllerDelegate>
+// 忽略
+@property (nonatomic, assign) BOOL shouldIgnorePushingViewControllers;
 
 @end
 
@@ -25,6 +27,7 @@
     [super loadView];
     [self createBarView];
     self.navigationCanDragBack = YES;
+    self.delegate = self;
     [self addPopGesture];
 }
 - (void)viewDidLoad {
@@ -68,7 +71,11 @@
     if (self.viewControllers.count>0){
         viewController.hidesBottomBarWhenPushed = YES;
     }
-    [super pushViewController:viewController animated:animated];
+    // 避免重复push同一个viewcontroller
+    if (!self.shouldIgnorePushingViewControllers) {
+        [super pushViewController:viewController animated:animated];
+    }
+    self.shouldIgnorePushingViewControllers = YES;
 
     TMNavigationBarView * barView = [[TMNavigationBarView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TM_TopBarHeight)];
     viewController.navigationBar =  barView;
@@ -83,6 +90,9 @@
     // 设置渐变色后，设置背景颜色不起作用
 // [viewController setGradientBackgroundFromColor:UIColorFromRGB(0x12ace5) toColor:UIColorFromRGB(0x1e82d2)];
     
+}
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    self.shouldIgnorePushingViewControllers = NO;
 }
 - (void)setPropertyWithViewController:(UIViewController*)viewController barView:(TMNavigationBarView *)barView{
     barView.title = viewController.title;
