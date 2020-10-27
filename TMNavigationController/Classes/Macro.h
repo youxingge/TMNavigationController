@@ -25,7 +25,7 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 
 
 // 顶部安全区
-CG_INLINE CGFloat KKSafeInsetTop(void) {
+CG_INLINE CGFloat TMSafeInsetTop(void) {
     if (@available(iOS 11.0, *)) {
         UIEdgeInsets safeInset = UIApplication.sharedApplication.keyWindow.safeAreaInsets;
         if (UIEdgeInsetsEqualToEdgeInsets(safeInset, UIEdgeInsetsZero)) {
@@ -38,7 +38,7 @@ CG_INLINE CGFloat KKSafeInsetTop(void) {
 }
 
 // 底部安全区
-CG_INLINE CGFloat KKSafeInsetBottom(void) {
+CG_INLINE CGFloat TMSafeInsetBottom(void) {
     if (@available(iOS 11.0, *)) {
         return UIApplication.sharedApplication.keyWindow.safeAreaInsets.bottom;
     } else {
@@ -46,10 +46,10 @@ CG_INLINE CGFloat KKSafeInsetBottom(void) {
     }
 }
 
-#define TM_StatusBarHeight      KKSafeInsetTop()
+#define TM_StatusBarHeight      TMSafeInsetTop()
 #define TM_NavigationBarHeight  44.f
-#define TM_TopBarHeight      (KKSafeInsetTop() + TM_NavigationBarHeight)
-#define TM_TabbarSafeBottomMargin      KKSafeInsetBottom()
+#define TM_TopBarHeight      (TMSafeInsetTop() + TM_NavigationBarHeight)
+#define TM_TabbarSafeBottomMargin      TMSafeInsetBottom()
 #define TM_TabbarHeight         (TM_TabbarSafeBottomMargin + 49.f)
 
 #define kWEAK_SELF __weak typeof(self) weakSelf = self;
