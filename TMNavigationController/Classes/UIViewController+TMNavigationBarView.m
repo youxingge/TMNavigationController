@@ -12,6 +12,7 @@
 @implementation UIViewController (TMNavigationBarView)
 
 @dynamic navigationCanDragBack;
+@dynamic navigationCanSideslipBack;
 @dynamic navigationRightBarImage;
 @dynamic navigationBar;
 @dynamic navigationBarHidden;
@@ -32,11 +33,10 @@
 @dynamic navigationRightBarRedButtonShow;
 @dynamic navigationLeftBarTitleColor;
 
-- (BOOL)navigationCanDragBack{
+- (BOOL)navigationCanDragBack {
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
-- (void)setNavigationCanDragBack:(BOOL)navigationCanDragBack{
-    
+- (void)setNavigationCanDragBack:(BOOL)navigationCanDragBack {
     if ([self.navigationController isKindOfClass:[TMNavigationController class]]) {
         TMNavigationController * nav = (TMNavigationController*)self.navigationController;
         if (nav && [nav isKindOfClass:TMNavigationController.class]) {
@@ -51,7 +51,21 @@
         }
     }
     objc_setAssociatedObject(self, @selector(navigationCanDragBack), @(navigationCanDragBack), OBJC_ASSOCIATION_ASSIGN);
-
+}
+- (BOOL)navigationCanSideslipBack {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+- (void)setNavigationCanSideslipBack:(BOOL)navigationCanSideslipBack {
+    if ([self.navigationController isKindOfClass:[TMNavigationController class]]) {
+        TMNavigationController * nav = (TMNavigationController*)self.navigationController;
+        if (nav && [nav isKindOfClass:TMNavigationController.class]) {
+            if (nav.panGesture) {
+                // 打开侧滑返回
+                nav.navigationCanSideslipBack = navigationCanSideslipBack;
+            }
+        }
+    }
+    objc_setAssociatedObject(self, @selector(navigationCanSideslipBack), @(navigationCanSideslipBack), OBJC_ASSOCIATION_ASSIGN);
 }
 - (TMNavigationBarView *)navigationBar{
     return objc_getAssociatedObject(self, _cmd);
@@ -305,7 +319,7 @@
 }
 - (CGSize)getSizeWithString:(NSString*)string withFontCustom:(UIFont *)font{
     CGSize size = CGSizeMake(SCREEN_WIDTH/2, TM_TopBarHeight);
-    font == nil ? [UIFont systemFontOfSize:18] :font;
+    font == nil ? font = [UIFont systemFontOfSize:18] :font;
     CGRect frame =[string boundingRectWithSize:size options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:font}context:nil];
     return CGSizeMake(round(frame.size.width + 0.5), round(frame.size.height + 0.5));
 }

@@ -15,6 +15,8 @@
 
 @interface TMNavigationController : UINavigationController
 @property (strong , nonatomic) UIPanGestureRecognizer * panGesture;
+@property (nonatomic,assign) BOOL navigationCanSideslipBack;
+
 @end
 
 

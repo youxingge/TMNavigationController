@@ -14,7 +14,8 @@
 @end
 
 @implementation TMNavigationBarView
-- (instancetype)initWithFrame:(CGRect)frame{
+
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TM_TopBarHeight)];
     if (self) {
         

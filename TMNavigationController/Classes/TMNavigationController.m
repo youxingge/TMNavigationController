@@ -65,6 +65,14 @@
     if (translation.x <= 0  || self.childViewControllers.count==1 || [[self valueForKey:@"_isTransitioning"] boolValue]) {
         return NO;
     }
+    // 如果开启了侧滑 50 以内
+    CGPoint touchPoint = [gestureRecognizer locationInView:self.view];
+    if (self.navigationCanSideslipBack) {
+        CGFloat locationX = touchPoint.x;
+        if (locationX > 50) {
+            return NO;
+        }
+    }
     return YES;
 }
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {

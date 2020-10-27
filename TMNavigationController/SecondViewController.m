@@ -41,20 +41,21 @@
    
 
 }
-//- (void)viewDidDisappear:(BOOL)animated{
-//    [super viewDidDisappear:animated];
-//    self.navigationNeedFullGesture = YES;
-//}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.navigationCanSideslipBack = YES;
+
+}
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-//    self.navigationNeedFullGesture = YES;
+    self.navigationCanSideslipBack = NO;
 
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"SecondSecondSecondSecondSecondSecondSecondSecondSecond";
-//    self.navigationNeedFullGesture = NO;
 
+    
 }
 - (IBAction)push:(id)sender {
     ThirdViewController * vc = [ThirdViewController new];
