@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+// 按钮和标题控件高度
+#define ButtonViewHeight (TM_TopBarHeight-TM_StatusBarHeight)
+
 
 typedef void(^clickBackButton)(UIButton * button);
 typedef void(^clickLeftButton)(UIButton * button);
@@ -22,7 +25,6 @@ typedef void(^clickRightFirstButton)(UIButton * button);
 @property (strong ,nonatomic) UIButton * backButton;
 @property (strong ,nonatomic) UIButton * leftButton;
 @property (strong ,nonatomic) UIButton * rightButton;
-@property (strong ,nonatomic) UIButton * rightRedButton;
 @property (strong ,nonatomic) UIButton * rightFirstButton;
 @property (strong ,nonatomic) UIImageView * backgroundImageView;
 @property (strong ,nonatomic) UIView * lineView;

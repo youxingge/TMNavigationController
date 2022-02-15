@@ -60,10 +60,16 @@
     [pan addTarget:_UINavigationInteractiveTransition action:popAction];
     self.panGesture = pan;
 }
-- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer{
+- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
     CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
-    if (translation.x <= 0  || self.childViewControllers.count==1 || [[self valueForKey:@"_isTransitioning"] boolValue]) {
-        return NO;
+    if (kIsRTL) { // 适配阿拉伯
+        if (translation.x >= 0  || self.childViewControllers.count==1 || [[self valueForKey:@"_isTransitioning"] boolValue]) {
+            return NO;
+        }
+    }else {
+        if (translation.x <= 0  || self.childViewControllers.count==1 || [[self valueForKey:@"_isTransitioning"] boolValue]) {
+            return NO;
+        }
     }
     // 如果开启了侧滑 50 以内
     CGPoint touchPoint = [gestureRecognizer locationInView:self.view];
@@ -99,10 +105,10 @@
 // [viewController setGradientBackgroundFromColor:UIColorFromRGB(0x12ace5) toColor:UIColorFromRGB(0x1e82d2)];
     
 }
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     self.shouldIgnorePushingViewControllers = NO;
 }
-- (void)setPropertyWithViewController:(UIViewController*)viewController barView:(TMNavigationBarView *)barView{
+- (void)setPropertyWithViewController:(UIViewController*)viewController barView:(TMNavigationBarView *)barView {
     barView.title = viewController.title;
     barView.hidden = viewController.navigationBarHidden;
     barView.myBackgroundImage = viewController.navigationBarBackgroundImage;
@@ -118,13 +124,11 @@
     viewController.navigationLeftBarHidden = YES;
     viewController.navigationRightBarHidden = YES;
     viewController.navigationRightFirstBarHidden = YES;
-    viewController.navigationRightBarRedButtonShow = NO;
     
 }
 - (UIViewController*)popViewControllerAnimated:(BOOL)animated {
     return [super popViewControllerAnimated:animated];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

@@ -22,7 +22,11 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 }\
 (isPhoneX);})
 
-
+// 阿拉伯语等适配
+#define kIsRTL \
+({BOOL isRTL = NO;\
+isRTL = [UIApplication sharedApplication].userInterfaceLayoutDirection == UIUserInterfaceLayoutDirectionRightToLeft;\
+(isRTL);})
 
 // 顶部安全区
 CG_INLINE CGFloat TMSafeInsetTop(void) {

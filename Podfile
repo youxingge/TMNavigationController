@@ -6,7 +6,7 @@ inhibit_all_warnings!
 
 def my_pods
     
-    pod 'MLeaksFinder'
+    pod 'MLeaksFinder', :git => "https://github.com/Tencent/MLeaksFinder.git", :configurations => ['Debug']
 
 end
 

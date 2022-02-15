@@ -17,30 +17,21 @@
 @implementation SecondViewController
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationBarTitleColor = [UIColor whiteColor];
-    self.navigationBarBackgroundColor = [UIColor blueColor];
-    self.navigationBackButtonImage = [UIImage imageNamed:@"tm_back"];
-    
-
-//    self.navigationRightFirstBarHidden = NO;
-//    self.navigationRightFirstBarTitle = @"分享";
-//    self.navigationRightFirstBarTitleColor = [UIColor whiteColor];
-    
-    self.navigationRightBarHidden = NO;
-    self.navigationRightBarTitle = @"右边啊";
-    self.navigationRightBarTitleColor = [UIColor whiteColor];
-//    self.navigationRightBarImage = [UIImage imageNamed:@"tm_back"];
 
 //    self.navigationLeftBarHidden = NO;
-//    self.navigationLeftBarTitleColor = [UIColor whiteColor];
-    kWEAK_SELF
-    [self navigationRightButtonClickBlock:^(UIButton * button) {
-        NSLog(@"ddddddd");
-        weakSelf.title = @"right";
-    }];
-   
-
+//    self.navigationLeftBarTitleColor = [UIColor blackColor];
+//    self.navigationLeftBarTitle = @"好";
+    
+//    self.navigationRightFirstBarHidden = NO;
+//    self.navigationRightFirstBarTitle = @"分享";
+//    self.navigationRightFirstBarTitleColor = [UIColor blackColor];
+    
+//    self.navigationRightBarHidden = NO;
+//    self.navigationRightBarTitle = @"右边啊";
+//    self.navigationRightBarTitleColor = [UIColor blackColor];
+    
 }
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.navigationCanSideslipBack = YES;
@@ -53,8 +44,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"SecondSecondSecondSecondSecondSecondSecondSecondSecond";
-
+    self.title = @"SecondSecond";
     
 }
 - (IBAction)push:(id)sender {

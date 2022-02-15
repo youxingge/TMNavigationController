@@ -12,6 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (TMNavigationBarView)
+
 // 是否允许全屏滑动返回  不允许则没有滑动返回
 @property (nonatomic,assign)BOOL navigationCanDragBack;
 // 是否允许侧滑滑动返回  开启侧滑则没有全屏滑动
@@ -40,6 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 隐藏leftBar
 @property (nonatomic,assign)BOOL navigationLeftBarHidden;
+// 设置leftBar文字
+@property (nonatomic,strong)NSString * navigationLeftBarTitle;
+// 设置leftBar文字颜色
 @property (nonatomic,strong)UIColor * navigationLeftBarTitleColor;
 
 
@@ -61,14 +65,13 @@ NS_ASSUME_NONNULL_BEGIN
 // 设置rightBar图片
 @property (nonatomic,strong)UIImage * navigationRightBarImage;
 
-@property (nonatomic,assign)BOOL navigationRightBarRedButtonShow;
-
 
 // 设置导航颜色渐变色
 - (void)setNavigationGradientBackgroundFromColor:(UIColor*)fromColor toColor:(UIColor*)toColor;
 // 设置导航透明度
 - (void)setNavigationBarAlpha:(CGFloat)alpha;
 
+// 点击事件
 - (void)navigationBackButtonClickBlock:(void (^)(UIButton* button))block;
 - (void)navigationLeftButtonClickBlock:(void (^)(UIButton* button))block;
 - (void)navigationRightButtonClickBlock:(void (^)(UIButton* button))block;

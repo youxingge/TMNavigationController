@@ -12,6 +12,7 @@
 		372C8598221FDBD60003DDBE /* UIViewController+TMNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 372C8597221FDBD60003DDBE /* UIViewController+TMNavigationBarView.m */; };
 		373DAA452170DD79005F8659 /* tm_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 373DAA442170DD78005F8659 /* tm_back@2x.png */; };
 		37406B1B1CAFA2C0009EFFF7 /* left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37406B1A1CAFA2C0009EFFF7 /* left@2x.png */; };
+		3758B04427BA4899001E9EB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3758B04327BA4899001E9EB8 /* Localizable.strings */; };
 		37D29AD4221EBCAC00F84547 /* TMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D29ACD221EBCAC00F84547 /* TMNavigationController.m */; };
 		37D29AD6221EBCAC00F84547 /* TMNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D29AD1221EBCAC00F84547 /* TMNavigationBarView.m */; };
 		37D373821C9BA345005EB8DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D373811C9BA345005EB8DD /* main.m */; };
@@ -58,6 +59,11 @@
 		372C8597221FDBD60003DDBE /* UIViewController+TMNavigationBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TMNavigationBarView.m"; sourceTree = "<group>"; };
 		373DAA442170DD78005F8659 /* tm_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tm_back@2x.png"; sourceTree = "<group>"; };
 		37406B1A1CAFA2C0009EFFF7 /* left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left@2x.png"; sourceTree = "<group>"; };
+		3758B04327BA4899001E9EB8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		3758B04527BA48F2001E9EB8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		3758B04627BA48F2001E9EB8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3758B04727BA48FE001E9EB8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		3758B04827BA48FE001E9EB8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		37D29ACD221EBCAC00F84547 /* TMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMNavigationController.m; sourceTree = "<group>"; };
 		37D29ACF221EBCAC00F84547 /* TMNavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMNavigationBarView.h; sourceTree = "<group>"; };
 		37D29AD0221EBCAC00F84547 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
@@ -190,6 +196,7 @@
 				37D3738C1C9BA345005EB8DD /* Assets.xcassets */,
 				37D3738E1C9BA345005EB8DD /* LaunchScreen.storyboard */,
 				37D373911C9BA345005EB8DD /* Info.plist */,
+				3758B04327BA4899001E9EB8 /* Localizable.strings */,
 				37D373801C9BA345005EB8DD /* Supporting Files */,
 			);
 			path = TMNavigationController;
@@ -321,6 +328,8 @@
 				English,
 				en,
 				Base,
+				ar,
+				"zh-Hans",
 			);
 			mainGroup = 37D373741C9BA345005EB8DD;
 			productRefGroup = 37D3737E1C9BA345005EB8DD /* Products */;
@@ -340,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D373C71C9BA9AB005EB8DD /* 1@2x.gif in Resources */,
+				3758B04427BA4899001E9EB8 /* Localizable.strings in Resources */,
 				37406B1B1CAFA2C0009EFFF7 /* left@2x.png in Resources */,
 				372B4ECA1CB7936D008AD22F /* FourthViewController.xib in Resources */,
 				37D373CC1C9BAD82005EB8DD /* SecondViewController.xib in Resources */,
@@ -448,6 +458,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				37D3738A1C9BA345005EB8DD /* Base */,
+				3758B04527BA48F2001E9EB8 /* ar */,
+				3758B04727BA48FE001E9EB8 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -456,6 +468,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				37D3738F1C9BA345005EB8DD /* Base */,
+				3758B04627BA48F2001E9EB8 /* ar */,
+				3758B04827BA48FE001E9EB8 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
