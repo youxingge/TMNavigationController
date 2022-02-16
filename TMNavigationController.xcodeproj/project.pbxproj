@@ -64,9 +64,9 @@
 		3758B04627BA48F2001E9EB8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3758B04727BA48FE001E9EB8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		3758B04827BA48FE001E9EB8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		3758B04C27BCE727001E9EB8 /* TMMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMMacro.h; sourceTree = "<group>"; };
 		37D29ACD221EBCAC00F84547 /* TMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMNavigationController.m; sourceTree = "<group>"; };
 		37D29ACF221EBCAC00F84547 /* TMNavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMNavigationBarView.h; sourceTree = "<group>"; };
-		37D29AD0221EBCAC00F84547 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		37D29AD1221EBCAC00F84547 /* TMNavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMNavigationBarView.m; sourceTree = "<group>"; };
 		37D29AD3221EBCAC00F84547 /* TMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMNavigationController.h; sourceTree = "<group>"; };
 		37D3737D1C9BA345005EB8DD /* TMNavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMNavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,7 +145,7 @@
 				37D29AD1221EBCAC00F84547 /* TMNavigationBarView.m */,
 				37D29AD3221EBCAC00F84547 /* TMNavigationController.h */,
 				37D29ACD221EBCAC00F84547 /* TMNavigationController.m */,
-				37D29AD0221EBCAC00F84547 /* Macro.h */,
+				3758B04C27BCE727001E9EB8 /* TMMacro.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

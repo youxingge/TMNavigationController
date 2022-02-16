@@ -1,13 +1,13 @@
 //
-//  Macro.h
+//  TMMacro.h
 //  TMNavigationController
 //
-//  Created by TianMing on 2018/8/27.
-//  Copyright © 2018年 TianMing. All rights reserved.
+//  Created by 天明 on 2022/2/16.
+//  Copyright © 2022 TianMing. All rights reserved.
 //
 
-#ifndef Macro_h
-#define Macro_h
+#ifndef TMMacro_h
+#define TMMacro_h
 
 #define SCREEN_WIDTH  [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
@@ -59,4 +59,4 @@ CG_INLINE CGFloat TMSafeInsetBottom(void) {
 #define kWEAK_SELF __weak typeof(self) weakSelf = self;
 
 
-#endif /* Macro_h */
+#endif /* TMMacro_h */

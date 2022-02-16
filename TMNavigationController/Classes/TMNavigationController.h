@@ -11,7 +11,7 @@
 #import "objc/runtime.h"
 #import "TMNavigationBarView.h"
 #import "UIViewController+TMNavigationBarView.h"
-#import "Macro.h"
+#import "TMMacro.h"
 
 @interface TMNavigationController : UINavigationController
 @property (strong , nonatomic) UIPanGestureRecognizer * panGesture;
