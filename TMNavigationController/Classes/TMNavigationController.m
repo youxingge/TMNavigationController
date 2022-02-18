@@ -8,7 +8,6 @@
 
 #import "TMNavigationController.h"
 
-
 @interface TMNavigationController () <UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 // 忽略
 @property (nonatomic, assign) BOOL shouldIgnorePushingViewControllers;
@@ -74,7 +73,7 @@
     // 如果开启了侧滑 50 以内
     CGPoint touchPoint = [gestureRecognizer locationInView:self.view];
     if (self.navigationCanSideslipBack) {
-        CGFloat locationX = touchPoint.x;
+        CGFloat locationX = kIsRTL ? SCREEN_WIDTH - touchPoint.x : touchPoint.x;
         if (locationX > 50) {
             return NO;
         }
@@ -132,6 +131,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
 
 @end
 

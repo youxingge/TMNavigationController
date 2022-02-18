@@ -46,17 +46,16 @@
     
     _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _backButton.adjustsImageWhenHighlighted = NO;
+    [_backButton addTarget:self action:@selector(backLastView:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_backButton];
     if (kIsRTL) {
-        _backButton.semanticContentAttribute = UISemanticContentAttributeForceRightToLeft;
-        UIImage *image = [[UIImage imageNamed:@"tm_back"] imageFlippedForRightToLeftLayoutDirection] ;
-        [_backButton setImage:image forState:UIControlStateNormal];
+        [_backButton setImage:[UIImage imageNamed:@"tm_back"] forState:UIControlStateNormal];
+        _backButton.transform = CGAffineTransformMakeScale(-1 ,1);
         _backButton.frame = CGRectMake(SCREEN_WIDTH - 55, TM_StatusBarHeight, 55, ButtonViewHeight);
     }else {
         [_backButton setImage:[UIImage imageNamed:@"tm_back"] forState:UIControlStateNormal];
         _backButton.frame = CGRectMake(0, TM_StatusBarHeight, 55, ButtonViewHeight);
     }
-    [_backButton addTarget:self action:@selector(backLastView:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:_backButton];
     
     _leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _leftButton.adjustsImageWhenHighlighted = NO;
@@ -185,5 +184,7 @@
     }
 }
 
+
 @end
+
 

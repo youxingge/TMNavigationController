@@ -17,53 +17,55 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign)BOOL navigationCanDragBack;
 // 是否允许侧滑滑动返回  开启侧滑则没有全屏滑动
 @property (nonatomic,assign)BOOL navigationCanSideslipBack;
+
 // 顶部导航
 @property (nonatomic,strong)TMNavigationBarView *navigationBar;
-// 标题
-@property (nonatomic,copy)NSString* title;
-// 标题颜色
-@property (nonatomic,copy)UIColor* navigationBarTitleColor;
-
-// 设置navigationBar的颜色
-@property (nonatomic,strong)UIColor* navigationBarBackgroundColor;
-// 设置navigationBar背景图
-@property (nonatomic,strong)UIImage *navigationBarBackgroundImage;
-
-
-// 设置bottomLine的颜色
-@property (nonatomic,strong)UIColor *navigationBarBottomLineBackgroundColor;
 // 隐藏navigationBar
 @property (nonatomic,getter=isNavigationBar)BOOL navigationBarHidden;
 
-// 设置backButton的图片
+// 标题
+@property (nonatomic,copy)NSString *title;
+// 标题颜色
+@property (nonatomic,strong)UIColor *navigationBarTitleColor;
+
+// 设置navigationBar的颜色
+@property (nonatomic,strong)UIColor *navigationBarBackgroundColor;
+// 设置navigationBar背景图
+@property (nonatomic,strong)UIImage *navigationBarBackgroundImage;
+
+// 设置bottomLine的颜色
+@property (nonatomic,strong)UIColor *navigationBarBottomLineBackgroundColor;
+
+// 设置返回按钮隐藏
 @property (nonatomic,assign)BOOL navigationBackBarHidden;
+// 设置返回按钮backButton的图片
 @property (nonatomic,strong)UIImage *navigationBackButtonImage;
 
-// 隐藏leftBar
+// 隐藏leftBarButton
 @property (nonatomic,assign)BOOL navigationLeftBarHidden;
 // 设置leftBar文字
-@property (nonatomic,strong)NSString * navigationLeftBarTitle;
+@property (nonatomic,strong)NSString *navigationLeftBarTitle;
 // 设置leftBar文字颜色
-@property (nonatomic,strong)UIColor * navigationLeftBarTitleColor;
+@property (nonatomic,strong)UIColor *navigationLeftBarTitleColor;
 
 
 // 隐藏rightFirstBar
 @property (nonatomic,assign)BOOL navigationRightFirstBarHidden;
 // 设置rightFirstBar文字
-@property (nonatomic,strong)NSString * navigationRightFirstBarTitle;
+@property (nonatomic,strong)NSString *navigationRightFirstBarTitle;
 // 设置rightFirstBar文字颜色
-@property (nonatomic,strong)UIColor * navigationRightFirstBarTitleColor;
+@property (nonatomic,strong)UIColor *navigationRightFirstBarTitleColor;
 // 设置rightFirstBar图片
-@property (nonatomic,strong)UIImage * navigationRightFirstBarImage;
+@property (nonatomic,strong)UIImage *navigationRightFirstBarImage;
 
 // 隐藏rightBar
 @property (nonatomic,assign)BOOL navigationRightBarHidden;
 // 设置rightBar文字
-@property (nonatomic,strong)NSString * navigationRightBarTitle;
+@property (nonatomic,strong)NSString *navigationRightBarTitle;
 // 设置rightBar文字颜色
-@property (nonatomic,strong)UIColor * navigationRightBarTitleColor;
+@property (nonatomic,strong)UIColor *navigationRightBarTitleColor;
 // 设置rightBar图片
-@property (nonatomic,strong)UIImage * navigationRightBarImage;
+@property (nonatomic,strong)UIImage *navigationRightBarImage;
 
 
 // 设置导航颜色渐变色
