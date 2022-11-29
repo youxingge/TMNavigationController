@@ -119,7 +119,6 @@
     if (self.rightFirstClick) {
         self.rightFirstClick(button);
     }
-    
 }
 - (void)clickBackButton:(clickBackButton)block{
     self.click = [block copy];
@@ -145,13 +144,7 @@
     if ([title isEqualToString:_titleLabel.text]) {
         return;
     }
-    if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc] init];
-        _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-    }
     _titleLabel.text = title;
-    [self setNeedsDisplay];
 }
 - (void)setMyBackgroundColor:(UIColor *)myBackgroundColor{
     _myBackgroundColor = myBackgroundColor;

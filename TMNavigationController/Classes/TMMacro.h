@@ -9,24 +9,16 @@
 #ifndef TMMacro_h
 #define TMMacro_h
 
+#import "TMNavigationConfig.h"
+
 #define SCREEN_WIDTH  [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 
 // rgb颜色转换（16进制->10进制）
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-#define kDevice_Is_iPhoneX \
-({BOOL isPhoneX = NO;\
-if (@available(iOS 11.0, *)) {\
-isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
-}\
-(isPhoneX);})
-
 // 阿拉伯语等适配
-#define kIsRTL \
-({BOOL isRTL = NO;\
-isRTL = [UIApplication sharedApplication].userInterfaceLayoutDirection == UIUserInterfaceLayoutDirectionRightToLeft;\
-(isRTL);})
+#define kIsRTL [[TMNavigationConfig shareInstance] getIsRTL]
 
 // 顶部安全区
 CG_INLINE CGFloat TMSafeInsetTop(void) {

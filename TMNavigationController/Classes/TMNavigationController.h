@@ -14,8 +14,12 @@
 #import "TMMacro.h"
 
 @interface TMNavigationController : UINavigationController
+
 @property (strong , nonatomic) UIPanGestureRecognizer * panGesture;
+
+// 单独控制某个导航侧滑
 @property (nonatomic,assign) BOOL navigationCanSideslipBack;
+
 
 @end
 

@@ -29,6 +29,9 @@
     TMNavigationController * nav2 = [[TMNavigationController alloc]initWithRootViewController:[FirstViewController new]];
     TMNavigationController * nav3 = [[TMNavigationController alloc]initWithRootViewController:[FirstViewController new]];
     _tabbar.viewControllers = @[nav1,nav2,nav3];
+    
+//    [TMNavigationConfig shareInstance].forceSideslipGesture = YES;
+    
 }
 -(void)gotoWindow{
     AppDelegate * app = (AppDelegate*)[UIApplication sharedApplication].delegate;

@@ -8,6 +8,7 @@
 
 #import "UIViewController+TMNavigationBarView.h"
 #import "TMNavigationController.h"
+#import "TMNavigationConfig.h"
 
 @implementation UIViewController (TMNavigationBarView)
 
@@ -59,8 +60,12 @@
         TMNavigationController * nav = (TMNavigationController*)self.navigationController;
         if (nav && [nav isKindOfClass:TMNavigationController.class]) {
             if (nav.panGesture) {
-                // 打开侧滑返回
-                nav.navigationCanSideslipBack = navigationCanSideslipBack;
+                // 如果打开全局的侧滑返回
+                if ([TMNavigationConfig shareInstance].forceSideslipGesture) {
+                    nav.navigationCanSideslipBack = YES;
+                }else {
+                    nav.navigationCanSideslipBack = navigationCanSideslipBack;
+                }
             }
         }
     }
@@ -274,7 +279,7 @@
 - (void)setTitle:(NSString *)title{
     if (title && self.navigationBar ) {
         if ([self.navigationBar isKindOfClass:[TMNavigationBarView class]]) {
-            [self.navigationBar setTitle:title];
+            self.navigationBar.title = title;
         }
     }
     objc_setAssociatedObject(self, @selector(title), title, OBJC_ASSOCIATION_COPY);

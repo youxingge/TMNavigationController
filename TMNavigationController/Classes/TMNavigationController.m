@@ -7,6 +7,7 @@
 //
 
 #import "TMNavigationController.h"
+#import "TMNavigationConfig.h"
 
 @interface TMNavigationController () <UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 // 忽略
@@ -31,6 +32,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([TMNavigationConfig shareInstance].forceSideslipGesture) {
+        self.navigationCanSideslipBack = YES;
+    }
 }
 
 - (void)createBarView {
