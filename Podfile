@@ -14,6 +14,10 @@ target 'TMNavigationController' do
     my_pods
 end
 
+# github token
+# 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
+
+
 
 #post_install do |installer|
 #  installer.project.targets.each do |target|
