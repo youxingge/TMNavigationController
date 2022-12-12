@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 // 可选全局配置 侧滑返回
 @property (nonatomic ,assign) BOOL forceSideslipGesture;
 
+@property (nonatomic ,strong ,nullable) UIImage *backButtonImage;
+
 // 获取RTL
 - (BOOL)getIsRTL;
 

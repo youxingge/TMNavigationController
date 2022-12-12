@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign)BOOL navigationCanSideslipBack;
 
 // 顶部导航
-@property (nonatomic,strong)TMNavigationBarView *navigationBar;
+@property (nonatomic,strong,nullable)TMNavigationBarView *navigationBar;
 // 隐藏navigationBar
 @property (nonatomic,getter=isNavigationBar)BOOL navigationBarHidden;
 

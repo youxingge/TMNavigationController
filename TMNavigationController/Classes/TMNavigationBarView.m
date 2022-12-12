@@ -48,12 +48,17 @@
     _backButton.adjustsImageWhenHighlighted = NO;
     [_backButton addTarget:self action:@selector(backLastView:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_backButton];
+    
+    UIImage *backImage = [UIImage imageNamed:@"tm_back"];
+    if ([TMNavigationConfig shareInstance].backButtonImage) {
+        backImage = [TMNavigationConfig shareInstance].backButtonImage;
+    }
     if (kIsRTL) {
-        [_backButton setImage:[UIImage imageNamed:@"tm_back"] forState:UIControlStateNormal];
+        [_backButton setImage:backImage forState:UIControlStateNormal];
         _backButton.transform = CGAffineTransformMakeScale(-1 ,1);
         _backButton.frame = CGRectMake(SCREEN_WIDTH - 55, TM_StatusBarHeight, 55, ButtonViewHeight);
     }else {
-        [_backButton setImage:[UIImage imageNamed:@"tm_back"] forState:UIControlStateNormal];
+        [_backButton setImage:backImage forState:UIControlStateNormal];
         _backButton.frame = CGRectMake(0, TM_StatusBarHeight, 55, ButtonViewHeight);
     }
     
