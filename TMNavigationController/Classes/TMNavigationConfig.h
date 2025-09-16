@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TMNavigationConfig : NSObject
 
++ (UIEdgeInsets)tm_safeAreaInsets;
+
 + (instancetype)shareInstance;
 
 // 切换语言时候，外部设置RTL

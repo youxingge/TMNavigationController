@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,8 +17,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Owa-Jz-DMB">
-                    <rect key="frame" x="126" y="100" width="101" height="307"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Owa-Jz-DMB">
+                    <rect key="frame" x="126" y="160" width="101" height="247"/>
                     <color key="backgroundColor" red="1" green="0.67550329976661327" blue="0.57125150138484204" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="push"/>
                     <connections>
@@ -32,10 +30,10 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Owa-Jz-DMB" secondAttribute="bottom" constant="260" id="2hz-MW-gXU"/>
                 <constraint firstAttribute="trailing" secondItem="Owa-Jz-DMB" secondAttribute="trailing" constant="148" id="NYJ-LS-0Vf"/>
-                <constraint firstItem="Owa-Jz-DMB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="QJ2-w9-xRc"/>
+                <constraint firstItem="Owa-Jz-DMB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="160" id="t75-dA-anJ"/>
                 <constraint firstItem="Owa-Jz-DMB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="126" id="uKI-Sp-bEr"/>
             </constraints>
-            <point key="canvasLocation" x="32.5" y="92.5"/>
+            <point key="canvasLocation" x="52" y="83.208395802098963"/>
         </view>
     </objects>
 </document>

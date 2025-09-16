@@ -22,24 +22,12 @@
 
 // 顶部安全区
 CG_INLINE CGFloat TMSafeInsetTop(void) {
-    if (@available(iOS 11.0, *)) {
-        UIEdgeInsets safeInset = UIApplication.sharedApplication.keyWindow.safeAreaInsets;
-        if (UIEdgeInsetsEqualToEdgeInsets(safeInset, UIEdgeInsetsZero)) {
-            return CGRectGetHeight(UIApplication.sharedApplication.statusBarFrame);
-        }
-        return UIApplication.sharedApplication.keyWindow.safeAreaInsets.top;
-    } else {
-        return CGRectGetHeight(UIApplication.sharedApplication.statusBarFrame);
-    }
+    return [TMNavigationConfig tm_safeAreaInsets].top;
 }
 
 // 底部安全区
 CG_INLINE CGFloat TMSafeInsetBottom(void) {
-    if (@available(iOS 11.0, *)) {
-        return UIApplication.sharedApplication.keyWindow.safeAreaInsets.bottom;
-    } else {
-        return 0;
-    }
+    return [TMNavigationConfig tm_safeAreaInsets].bottom;
 }
 
 #define TM_StatusBarHeight      TMSafeInsetTop()

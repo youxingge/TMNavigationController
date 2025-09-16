@@ -1,0 +1,6 @@
+framework module TMNavigationController {
+  umbrella header "TMNavigationController-umbrella.h"
+
+  export *
+  module * { export * }
+}

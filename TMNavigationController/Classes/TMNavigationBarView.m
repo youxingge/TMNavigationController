@@ -9,7 +9,7 @@
 #import "TMNavigationBarView.h"
 #import "TMMacro.h"
 
-@interface  TMNavigationBarView()
+@interface TMNavigationBarView()
 
 @end
 

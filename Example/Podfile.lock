@@ -1,0 +1,16 @@
+PODS:
+  - TMNavigationController (0.1.8)
+
+DEPENDENCIES:
+  - TMNavigationController (from `../`)
+
+EXTERNAL SOURCES:
+  TMNavigationController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TMNavigationController: 826dd4295acac88d3ffa334d76353083ab8ac5e9
+
+PODFILE CHECKSUM: 0e1cd18fd52a47e42c400a1854a30cd97ea7cb0a
+
+COCOAPODS: 1.15.2
