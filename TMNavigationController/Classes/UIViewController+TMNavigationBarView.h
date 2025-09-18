@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (TMNavigationBarView)
 
-// 是否允许全屏滑动返回  不允许则没有滑动返回
+// 是否允许全屏滑动返回  不允许则没有滑动返回（包括侧滑返回）
 @property (nonatomic,assign)BOOL navigationCanDragBack;
 // 是否允许侧滑滑动返回  开启侧滑则没有全屏滑动
 @property (nonatomic,assign)BOOL navigationCanSideslipBack;

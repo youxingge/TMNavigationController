@@ -18,7 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TMNavigationConfig : NSObject
 
+// 获取安全区域
 + (UIEdgeInsets)tm_safeAreaInsets;
+
+// 获取keyWindow
++ (UIWindow *)tm_getKeyWindow;
 
 + (instancetype)shareInstance;
 
@@ -29,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 可选全局配置 侧滑返回
 @property (nonatomic ,assign) BOOL forceSideslipGesture;
 
+// 配置全局的导航栏左侧返回按钮图片
 @property (nonatomic ,strong ,nullable) UIImage *backButtonImage;
 
 // 获取RTL
