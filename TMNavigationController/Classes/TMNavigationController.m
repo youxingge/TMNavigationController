@@ -40,7 +40,7 @@
 - (void)createBarView {
     self.navigationBarHidden = YES;
     TMNavigationBarView * barView  = [[TMNavigationBarView alloc]init];
-    kWEAK_SELF
+    __weak typeof(self) weakSelf = self;
     [barView clickBackButton:^(UIButton *button) {
         [weakSelf popViewControllerAnimated:YES];
     }];
@@ -119,7 +119,7 @@
     barView.myTitleColor = viewController.navigationBarTitleColor;
     barView.myBottomLineColor = viewController.navigationBarBottomLineBackgroundColor;
     // 默认点击返回方法
-    kWEAK_SELF
+    __weak typeof(self) weakSelf = self;
     [barView clickBackButton:^(UIButton *button) {
         [weakSelf popViewControllerAnimated:YES];
     }];
@@ -131,6 +131,16 @@
 }
 - (UIViewController*)popViewControllerAnimated:(BOOL)animated {
     return [super popViewControllerAnimated:animated];
+}
+// 支持子控制器旋转方向
+- (BOOL)shouldAutorotate {
+    return self.topViewController.shouldAutorotate;
+}
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return self.topViewController.supportedInterfaceOrientations;
+}
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return self.topViewController.preferredInterfaceOrientationForPresentation;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
