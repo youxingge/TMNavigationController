@@ -27,14 +27,20 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)shareInstance;
 
 // 切换语言时候，外部设置RTL
-@property (nonatomic ,assign) TMInterfaceLayoutDirection layoutDirection;
+@property (nonatomic, assign) TMInterfaceLayoutDirection layoutDirection;
 
 // 默认全屏滑动返回
 // 可选全局配置 侧滑返回
-@property (nonatomic ,assign) BOOL forceSideslipGesture;
+@property (nonatomic, assign) BOOL forceSideslipGesture;
 
 // 配置全局的导航栏左侧返回按钮图片
-@property (nonatomic ,strong ,nullable) UIImage *backButtonImage;
+@property (nonatomic, strong, nullable) UIImage *backButtonImage;
+
+// 配置全局的导航栏标题
+@property (nonatomic, strong, nullable) UIFont *navigationBarTitleLabelFont;
+
+// 配置全局的 横屏时候导航栏高度
+@property (nonatomic, assign) CGFloat landscapeModeNavigationBarHeight;
 
 // 获取RTL
 - (BOOL)getIsRTL;

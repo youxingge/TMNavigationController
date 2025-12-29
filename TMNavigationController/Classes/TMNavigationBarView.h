@@ -41,6 +41,9 @@ typedef void(^clickRightFirstButton)(UIButton * button);
 @property (copy ,nonatomic) clickRightButton rightClick;
 @property (copy ,nonatomic) clickRightFirstButton rightFirstClick;
 
+// 获取横竖屏导航高度
++ (CGFloat)getNavigationBarHeight;
+
 // 设置左侧按钮 和右侧按钮 以及返回按钮点击方法
 - (void)clickBackButton:(clickBackButton)block;
 - (void)clickLeftButton:(clickLeftButton)block;
