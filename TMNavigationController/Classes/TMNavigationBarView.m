@@ -156,7 +156,7 @@
         
         // --- 最右侧按钮 (_rightButton) ---
         // 位置：最后侧 (LTR为右, RTL为左)
-        [_rightButton.trailingAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.trailingAnchor constant:-6],
+        [_rightButton.trailingAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.trailingAnchor constant:0],
         [_rightButton.bottomAnchor constraintEqualToAnchor:self.bottomAnchor],
         [_rightButton.widthAnchor constraintEqualToConstant:55],
         [_rightButton.heightAnchor constraintEqualToConstant:ButtonViewHeight],
