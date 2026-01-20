@@ -59,7 +59,14 @@ static UIEdgeInsets __tm_safeAreaInsets;
         }
         return UIApplication.sharedApplication.windows.firstObject;
     } else {
+        
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
         return UIApplication.sharedApplication.keyWindow;
+
+#pragma clang diagnostic pop
+
     }
 }
 

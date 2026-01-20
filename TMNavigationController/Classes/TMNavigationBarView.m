@@ -90,7 +90,7 @@
     
     _leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _leftButton.adjustsImageWhenHighlighted = NO;
-    [_leftButton setTitle:@"关闭" forState:UIControlStateNormal];
+    [_leftButton setTitle:@"Close" forState:UIControlStateNormal];
     _leftButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [_leftButton setTitleColor:UIColorFromRGB(0x27313e) forState:UIControlStateNormal];
     [_leftButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
