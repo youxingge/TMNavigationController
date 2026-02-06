@@ -88,9 +88,17 @@
     if (self.viewControllers.count>0){
         viewController.hidesBottomBarWhenPushed = YES;
     }
-    // 避免重复push同一个viewcontroller
-    if (!self.shouldIgnorePushingViewControllers) {
+    
+    // 判断 iPad iOS26
+    BOOL isIpadAndIOS26 = [self isIpadAndIOS26];
+    // iPad iOS26 直接push
+    if (isIpadAndIOS26) {
         [super pushViewController:viewController animated:animated];
+    } else {
+        // 避免重复push同一个viewcontroller
+        if (!self.shouldIgnorePushingViewControllers) {
+            [super pushViewController:viewController animated:animated];
+        }
     }
     self.shouldIgnorePushingViewControllers = YES;
 
@@ -131,6 +139,14 @@
 }
 - (UIViewController*)popViewControllerAnimated:(BOOL)animated {
     return [super popViewControllerAnimated:animated];
+}
+- (BOOL)isIpadAndIOS26 {
+    if (@available(iOS 26.0, *)) {
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+            return YES;
+        }
+    }
+    return NO;
 }
 // 支持子控制器旋转方向
 - (BOOL)shouldAutorotate {
