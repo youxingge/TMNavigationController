@@ -12,7 +12,7 @@
 @interface TMNavigationController () <UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 // 忽略
 @property (nonatomic, assign) BOOL shouldIgnorePushingViewControllers;
-
+@property (nonatomic, strong) NSLayoutConstraint *heigthConstranint;
 @end
 
 @implementation TMNavigationController
@@ -94,20 +94,38 @@
     }
     self.shouldIgnorePushingViewControllers = YES;
 
-    TMNavigationBarView * barView = [[TMNavigationBarView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TM_TopBarHeight)];
-    viewController.navigationBar =  barView;
-    [viewController.view addSubview: barView];
-   
+    CGFloat navHeight = [TMNavigationBarView getNavigationBarHeight];
+    TMNavigationBarView *barView = [[TMNavigationBarView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, navHeight)];
+    viewController.navigationBar = barView;
+    [viewController.view addSubview:barView];
+    // 添加约束
+    barView.translatesAutoresizingMaskIntoConstraints = NO;
+    [barView.leadingAnchor constraintEqualToAnchor:barView.superview.leadingAnchor].active = YES;
+    [barView.trailingAnchor constraintEqualToAnchor:barView.superview.trailingAnchor].active = YES;
+    [barView.topAnchor constraintEqualToAnchor:barView.superview.topAnchor].active = YES; //让背景色延伸到状态栏
+    // 更新barView高度约束
+    [self updateBarViewConstanion:barView navHeight:navHeight];
+    
     if (self.viewControllers.count==1) {
         barView.backButton.hidden = YES;
     }
-    
+
     [self setPropertyWithViewController:viewController barView:barView];
    
     // 设置渐变色后，设置背景颜色不起作用
 // [viewController setGradientBackgroundFromColor:UIColorFromRGB(0x12ace5) toColor:UIColorFromRGB(0x1e82d2)];
     
 }
+
+// 更新barView高度约束
+- (void)updateBarViewConstanion:(TMNavigationBarView *)barView navHeight:(CGFloat)navHeight {
+    [barView removeConstraint:self.heigthConstranint];
+    self.heigthConstranint = [barView.heightAnchor constraintEqualToConstant:navHeight];
+    self.heigthConstranint.active = YES;
+    [barView addConstraint:self.heigthConstranint];
+    [barView.superview layoutIfNeeded];
+}
+
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     self.shouldIgnorePushingViewControllers = NO;
 }
@@ -141,6 +159,18 @@
 }
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return self.topViewController.preferredInterfaceOrientationForPresentation;
+}
+// 屏幕旋转 nav高度变化
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    UIViewController *topController = self.topViewController;
+    CGFloat navHeight = [TMNavigationBarView getNavigationBarHeight];
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        // --- 旋转动画块 ---
+        [self updateBarViewConstanion:topController.navigationBar navHeight:navHeight];
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        // 旋转结束后的回调
+    }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

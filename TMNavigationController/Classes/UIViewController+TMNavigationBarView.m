@@ -103,24 +103,24 @@
     // 当只有一个左侧返回按钮的时候，将按钮可触控范围增大
     if (navigationLeftBarHidden) {
         self.navigationBar.leftButton.hidden = YES;
-        if (kIsRTL) {
-            self.navigationBar.backButton.frame = CGRectMake(SCREEN_WIDTH-55, TM_StatusBarHeight, 55, ButtonViewHeight);
-            [self.navigationBar.titleLabel setFrame:CGRectMake(50, TM_StatusBarHeight, SCREEN_WIDTH - 100, ButtonViewHeight)];
-        }else {
-            self.navigationBar.backButton.frame = CGRectMake(0, TM_StatusBarHeight, 55, ButtonViewHeight);
-            [self.navigationBar.titleLabel setFrame:CGRectMake(50, TM_StatusBarHeight, SCREEN_WIDTH - 100, ButtonViewHeight)];
-        }
+//        if (kIsRTL) {
+//            self.navigationBar.backButton.frame = CGRectMake(SCREEN_WIDTH-55, TM_StatusBarHeight, 55, ButtonViewHeight);
+//            [self.navigationBar.titleLabel setFrame:CGRectMake(50, TM_StatusBarHeight, SCREEN_WIDTH - 100, ButtonViewHeight)];
+//        }else {
+//            self.navigationBar.backButton.frame = CGRectMake(0, TM_StatusBarHeight, 55, ButtonViewHeight);
+//            [self.navigationBar.titleLabel setFrame:CGRectMake(50, TM_StatusBarHeight, SCREEN_WIDTH - 100, ButtonViewHeight)];
+//        }
     }else{
         self.navigationBar.leftButton.hidden = NO;
-        if (kIsRTL) {
-            self.navigationBar.backButton.frame = CGRectMake(SCREEN_WIDTH-45, TM_StatusBarHeight, 45, ButtonViewHeight);
-            [self.navigationBar.leftButton setFrame:CGRectMake(SCREEN_WIDTH-70, TM_StatusBarHeight, 45, ButtonViewHeight)];
-            [self.navigationBar.titleLabel setFrame:CGRectMake(80, TM_StatusBarHeight, SCREEN_WIDTH - 80*2, ButtonViewHeight)];
-        }else {
-            [self.navigationBar.leftButton setFrame:CGRectMake(45, TM_StatusBarHeight, 45, ButtonViewHeight)];
-            [self.navigationBar.titleLabel setFrame:CGRectMake(80, TM_StatusBarHeight, SCREEN_WIDTH - 80*2, ButtonViewHeight)];
-            self.navigationBar.backButton.frame = CGRectMake(0, TM_StatusBarHeight, 45, ButtonViewHeight);
-        }
+//        if (kIsRTL) {
+//            self.navigationBar.backButton.frame = CGRectMake(SCREEN_WIDTH-45, TM_StatusBarHeight, 45, ButtonViewHeight);
+//            [self.navigationBar.leftButton setFrame:CGRectMake(SCREEN_WIDTH-70, TM_StatusBarHeight, 45, ButtonViewHeight)];
+//            [self.navigationBar.titleLabel setFrame:CGRectMake(80, TM_StatusBarHeight, SCREEN_WIDTH - 80*2, ButtonViewHeight)];
+//        }else {
+//            [self.navigationBar.leftButton setFrame:CGRectMake(45, TM_StatusBarHeight, 45, ButtonViewHeight)];
+//            [self.navigationBar.titleLabel setFrame:CGRectMake(80, TM_StatusBarHeight, SCREEN_WIDTH - 80*2, ButtonViewHeight)];
+//            self.navigationBar.backButton.frame = CGRectMake(0, TM_StatusBarHeight, 45, ButtonViewHeight);
+//        }
     }
     objc_setAssociatedObject(self, @selector(navigationLeftBarHidden), @(navigationLeftBarHidden), OBJC_ASSOCIATION_ASSIGN);
 }
@@ -148,11 +148,11 @@
 - (void)setNavigationRightBarHidden:(BOOL)navigationRightBarHidden{
     if (navigationRightBarHidden == NO) {
         self.navigationBar.rightButton.hidden = NO;
-        if (kIsRTL) {
-            self.navigationBar.rightButton.frame = CGRectMake(5, TM_StatusBarHeight, 55, ButtonViewHeight);
-        }else {
-            self.navigationBar.rightButton.frame = CGRectMake(SCREEN_WIDTH-50, TM_StatusBarHeight, 50, ButtonViewHeight);
-        }
+//        if (kIsRTL) {
+//            self.navigationBar.rightButton.frame = CGRectMake(5, TM_StatusBarHeight, 55, ButtonViewHeight);
+//        }else {
+//            self.navigationBar.rightButton.frame = CGRectMake(SCREEN_WIDTH-50, TM_StatusBarHeight, 50, ButtonViewHeight);
+//        }
     } else{
         self.navigationBar.rightButton.hidden = YES;
     }
@@ -166,30 +166,30 @@
 }
 - (void)setNavigationRightBarTitle:(NSString *)navigationRightBarTitle{
     if (navigationRightBarTitle) {
-        UIFont * font = self.navigationBar.rightButton.titleLabel.font;
-        CGFloat width = [self getSizeWithString:navigationRightBarTitle withFontCustom:font].width;
+//        UIFont * font = self.navigationBar.rightButton.titleLabel.font;
+//        CGFloat width = [self getSizeWithString:navigationRightBarTitle withFontCustom:font].width;
         [self.navigationBar.rightButton setTitle:navigationRightBarTitle forState:UIControlStateNormal];
-        if (kIsRTL) {
-            self.navigationBar.rightButton.frame = CGRectMake(5, TM_StatusBarHeight, width+5,ButtonViewHeight);
-        }else {
-            self.navigationBar.rightButton.frame = CGRectMake(SCREEN_WIDTH-width-10, TM_StatusBarHeight, width+5, ButtonViewHeight);
-        }
-        if (self.navigationBar.rightFirstButton.hidden==NO) {
-            CGFloat rightFirstButtonWidth = [self getSizeWithString:self.navigationBar.rightFirstButton.titleLabel.text withFontCustom:[UIFont systemFontOfSize:16]].width;
-            if (kIsRTL) {
-                self.navigationBar.rightFirstButton.frame = CGRectMake(width+5, TM_StatusBarHeight, rightFirstButtonWidth+5, ButtonViewHeight);
-            }else {
-                self.navigationBar.rightFirstButton.frame = CGRectMake(SCREEN_WIDTH-rightFirstButtonWidth-width-15, TM_StatusBarHeight, rightFirstButtonWidth+5, ButtonViewHeight);
-            }
-            CGFloat x = rightFirstButtonWidth + width+10;
-            CGFloat titleWith = SCREEN_WIDTH - (x + 50);
-            if (self.navigationBar.leftButton.hidden ==NO) {
-                titleWith = SCREEN_WIDTH - (x + 50 + CGRectGetWidth(self.navigationBar.leftButton.frame));
-            }
-            [self.navigationBar.titleLabel setFrame:CGRectMake(x, TM_StatusBarHeight, titleWith, ButtonViewHeight)];
-        }else{
-            [self.navigationBar.titleLabel setFrame:CGRectMake(width+10, TM_StatusBarHeight, SCREEN_WIDTH - (width+10)*2, ButtonViewHeight)];
-        }
+//        if (kIsRTL) {
+//            self.navigationBar.rightButton.frame = CGRectMake(5, TM_StatusBarHeight, width+5,ButtonViewHeight);
+//        }else {
+//            self.navigationBar.rightButton.frame = CGRectMake(SCREEN_WIDTH-width-10, TM_StatusBarHeight, width+5, ButtonViewHeight);
+//        }
+//        if (self.navigationBar.rightFirstButton.hidden==NO) {
+//            CGFloat rightFirstButtonWidth = [self getSizeWithString:self.navigationBar.rightFirstButton.titleLabel.text withFontCustom:[UIFont systemFontOfSize:16]].width;
+//            if (kIsRTL) {
+//                self.navigationBar.rightFirstButton.frame = CGRectMake(width+5, TM_StatusBarHeight, rightFirstButtonWidth+5, ButtonViewHeight);
+//            }else {
+//                self.navigationBar.rightFirstButton.frame = CGRectMake(SCREEN_WIDTH-rightFirstButtonWidth-width-15, TM_StatusBarHeight, rightFirstButtonWidth+5, ButtonViewHeight);
+//            }
+//            CGFloat x = rightFirstButtonWidth + width+10;
+//            CGFloat titleWith = SCREEN_WIDTH - (x + 50);
+//            if (self.navigationBar.leftButton.hidden ==NO) {
+//                titleWith = SCREEN_WIDTH - (x + 50 + CGRectGetWidth(self.navigationBar.leftButton.frame));
+//            }
+//            [self.navigationBar.titleLabel setFrame:CGRectMake(x, TM_StatusBarHeight, titleWith, ButtonViewHeight)];
+//        }else{
+//            [self.navigationBar.titleLabel setFrame:CGRectMake(width+10, TM_StatusBarHeight, SCREEN_WIDTH - (width+10)*2, ButtonViewHeight)];
+//        }
     }
     objc_setAssociatedObject(self, @selector(navigationRightBarTitle), navigationRightBarTitle, OBJC_ASSOCIATION_RETAIN);
 }
@@ -200,18 +200,18 @@
 - (void)setNavigationRightFirstBarHidden:(BOOL)navigationRightFirstBarHidden{
     if (navigationRightFirstBarHidden) {
         self.navigationBar.rightFirstButton.hidden = YES;
-        if (self.navigationLeftBarHidden) {
-            [self.navigationBar.titleLabel setFrame:CGRectMake(45, TM_StatusBarHeight, SCREEN_WIDTH - 90, ButtonViewHeight)];
-        }else{
-            [self.navigationBar.titleLabel setFrame:CGRectMake(80, TM_StatusBarHeight, SCREEN_WIDTH - 80*2, ButtonViewHeight)];
-        }
+//        if (self.navigationLeftBarHidden) {
+//            [self.navigationBar.titleLabel setFrame:CGRectMake(45, TM_StatusBarHeight, SCREEN_WIDTH - 90, ButtonViewHeight)];
+//        }else{
+//            [self.navigationBar.titleLabel setFrame:CGRectMake(80, TM_StatusBarHeight, SCREEN_WIDTH - 80*2, ButtonViewHeight)];
+//        }
     }else{
         self.navigationBar.rightFirstButton.hidden = NO;
-        if (self.navigationLeftBarHidden) {
-            [self.navigationBar.titleLabel setFrame:CGRectMake(45, TM_StatusBarHeight, SCREEN_WIDTH - 100-50, ButtonViewHeight)];
-        }else{
-            [self.navigationBar.titleLabel setFrame:CGRectMake(90, TM_StatusBarHeight, SCREEN_WIDTH - 90*2, ButtonViewHeight)];
-        }
+//        if (self.navigationLeftBarHidden) {
+//            [self.navigationBar.titleLabel setFrame:CGRectMake(45, TM_StatusBarHeight, SCREEN_WIDTH - 100-50, ButtonViewHeight)];
+//        }else{
+//            [self.navigationBar.titleLabel setFrame:CGRectMake(90, TM_StatusBarHeight, SCREEN_WIDTH - 90*2, ButtonViewHeight)];
+//        }
     }
     objc_setAssociatedObject(self, @selector(navigationRightFirstBarHidden), @(navigationRightFirstBarHidden), OBJC_ASSOCIATION_ASSIGN);
 }
@@ -220,18 +220,18 @@
 }
 - (void)setNavigationRightFirstBarTitle:(NSString *)navigationRightFirstBarTitle{
     if (navigationRightFirstBarTitle) {
-        UIFont * font = self.navigationBar.rightFirstButton.titleLabel.font;
-        CGFloat width = [self getSizeWithString:navigationRightFirstBarTitle withFontCustom:font].width;
-        CGFloat rightFirst = 0;
-        if (self.navigationBar.rightButton.titleLabel.text.length==0) {
-            rightFirst = 40;
-        }
+//        UIFont * font = self.navigationBar.rightFirstButton.titleLabel.font;
+//        CGFloat width = [self getSizeWithString:navigationRightFirstBarTitle withFontCustom:font].width;
+//        CGFloat rightFirst = 0;
+//        if (self.navigationBar.rightButton.titleLabel.text.length==0) {
+//            rightFirst = 40;
+//        }
         [self.navigationBar.rightFirstButton setTitle:navigationRightFirstBarTitle forState:UIControlStateNormal];
-        if (kIsRTL) {
-            self.navigationBar.rightFirstButton.frame = CGRectMake(rightFirst+10, TM_StatusBarHeight, width+5, ButtonViewHeight);
-        }else {
-            self.navigationBar.rightFirstButton.frame = CGRectMake(SCREEN_WIDTH-rightFirst-width-10, TM_StatusBarHeight, width+5, ButtonViewHeight);
-        }
+//        if (kIsRTL) {
+//            self.navigationBar.rightFirstButton.frame = CGRectMake(rightFirst+10, TM_StatusBarHeight, width+5, ButtonViewHeight);
+//        }else {
+//            self.navigationBar.rightFirstButton.frame = CGRectMake(SCREEN_WIDTH-rightFirst-width-10, TM_StatusBarHeight, width+5, ButtonViewHeight);
+//        }
     }
     objc_setAssociatedObject(self, @selector(navigationRightFirstBarTitle), navigationRightFirstBarTitle, OBJC_ASSOCIATION_RETAIN);
 }
@@ -277,7 +277,7 @@
     return objc_getAssociatedObject(self, _cmd);
 }
 - (void)setTitle:(NSString *)title{
-    if (title && self.navigationBar ) {
+    if (title && self.navigationBar) {
         if ([self.navigationBar isKindOfClass:[TMNavigationBarView class]]) {
             self.navigationBar.title = title;
         }
