@@ -53,7 +53,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "ming" => "uiview@sina.com" }
+  s.author             = { "ming" => "uibutton@qq.com" }
   # Or just: s.author    = "ming"
   # s.authors            = { "ming" => "uiview@sina.com" }
   # s.social_media_url   = "http://twitter.com/ming"
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/youxingge/TMNavigationController.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/youxingge/TMNavigationController.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
