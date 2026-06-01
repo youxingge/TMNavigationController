@@ -88,19 +88,17 @@
     if (self.viewControllers.count>0){
         viewController.hidesBottomBarWhenPushed = YES;
     }
-    
-    // 判断 iPad iOS26
-    BOOL isIpadAndIOS26 = [self isIpadAndIOS26];
-    // iPad iOS26 直接push
-    if (isIpadAndIOS26) {
+
+    // iOS 26 直接push
+    if (@available(iOS 26.0, *)) {
         [super pushViewController:viewController animated:animated];
     } else {
-        // 避免重复push同一个viewcontroller
+        // 避免重复push同一个viewcontroller，iOS 26 didShowViewController 回调时机变化可能导致锁未解除
         if (!self.shouldIgnorePushingViewControllers) {
             [super pushViewController:viewController animated:animated];
+            self.shouldIgnorePushingViewControllers = YES;
         }
     }
-    self.shouldIgnorePushingViewControllers = YES;
 
     TMNavigationBarView * barView = [[TMNavigationBarView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TM_TopBarHeight)];
     viewController.navigationBar =  barView;
@@ -139,14 +137,6 @@
 }
 - (UIViewController*)popViewControllerAnimated:(BOOL)animated {
     return [super popViewControllerAnimated:animated];
-}
-- (BOOL)isIpadAndIOS26 {
-    if (@available(iOS 26.0, *)) {
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-            return YES;
-        }
-    }
-    return NO;
 }
 // 支持子控制器旋转方向
 - (BOOL)shouldAutorotate {
