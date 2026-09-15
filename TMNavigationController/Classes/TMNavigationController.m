@@ -85,15 +85,22 @@
     return YES;
 }
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    if (self.viewControllers.count>0){
-        viewController.hidesBottomBarWhenPushed = YES;
+    // 栈内已有控制器才需要隐藏 TabBar，推根控制器时保持显示
+    BOOL shouldHideTabBar = self.viewControllers.count > 0;
+    viewController.hidesBottomBarWhenPushed = shouldHideTabBar;
+
+    // 无动画 push 不走转场，willShowViewController 里的隐藏会晚于首帧布局而闪现 TabBar，故提前同步一次
+    if (!animated) {
+        if (@available(iOS 26.0, *)) {
+            [self.tabBarController setTabBarHidden:shouldHideTabBar animated:animated];
+        }
     }
 
-    // iOS 26 直接push
+    // iOS 26 起 didShowViewController 回调时机变化，上面的锁可能永不解除导致后续无法跳转，故不加锁直接 push
     if (@available(iOS 26.0, *)) {
         [super pushViewController:viewController animated:animated];
     } else {
-        // 避免重复push同一个viewcontroller，iOS 26 didShowViewController 回调时机变化可能导致锁未解除
+        // iOS 26 以下靠锁避免转场动画期间重复 push 同一个控制器
         if (!self.shouldIgnorePushingViewControllers) {
             [super pushViewController:viewController animated:animated];
             self.shouldIgnorePushingViewControllers = YES;
@@ -114,6 +121,14 @@
 // [viewController setGradientBackgroundFromColor:UIColorFromRGB(0x12ace5) toColor:UIColorFromRGB(0x1e82d2)];
     
 }
+// iOS 26 起 hidesBottomBarWhenPushed 不再作用于悬浮 TabBar，需在转场开始时显式同步显隐；pop 回根控制器同样由此恢复
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (@available(iOS 26.0, *)) {
+        BOOL shouldHideTabBar = viewController != navigationController.viewControllers.firstObject;
+        [navigationController.tabBarController setTabBarHidden:shouldHideTabBar animated:animated];
+    }
+}
+
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     self.shouldIgnorePushingViewControllers = NO;
 }

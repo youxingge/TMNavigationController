@@ -1,5 +1,5 @@
 PODS:
-  - TMNavigationController (0.1.8)
+  - TMNavigationController (0.2.3)
 
 DEPENDENCIES:
   - TMNavigationController (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TMNavigationController: 826dd4295acac88d3ffa334d76353083ab8ac5e9
+  TMNavigationController: 5a900004b26d4e0d05d2d80c607f435bc58103f0
 
 PODFILE CHECKSUM: 0e1cd18fd52a47e42c400a1854a30cd97ea7cb0a
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2

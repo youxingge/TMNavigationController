@@ -157,6 +157,9 @@ BOOL isRTL               = [[TMNavigationConfig shareInstance] getIsRTL]; // 是
 
 ## 更新日志
 
+### 0.2.3
+- **适配 iOS 26 悬浮 TabBar**：iOS 26 起 TabBar 改为悬浮样式，`hidesBottomBarWhenPushed` 对其失效，push 到子页面后 TabBar 仍浮在底部。新版改用 `-[UITabBarController setTabBarHidden:animated:]` 显式控制，并新增 `navigationController:willShowViewController:animated:` 在转场开始时同步显隐，pop 回根控制器时自动恢复 TabBar。无动画 push 额外提前隐藏一次，避免 TabBar 闪现。
+
 ### 0.2.2
 - **修复 iOS 26 下页面无法 push 跳转的问题**：旧版 `pushViewController:animated:` 的防重复机制无论是否真正执行 push 都会置位 `shouldIgnorePushingViewControllers` 标志，依赖 `didShowViewController:` 回调复位。iOS 26 上该回调时机变化导致标志无法复位，后续 push 被静默忽略。新版仅在真正执行 push 后才置位标志，并移除了原有 iPad iOS 26 的特殊分支。
 
