@@ -125,7 +125,7 @@
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (@available(iOS 26.0, *)) {
         BOOL shouldHideTabBar = viewController != navigationController.viewControllers.firstObject;
-        [navigationController.tabBarController setTabBarHidden:shouldHideTabBar animated:animated];
+        [navigationController.tabBarController setTabBarHidden:shouldHideTabBar animated:NO];
     }
 }
 

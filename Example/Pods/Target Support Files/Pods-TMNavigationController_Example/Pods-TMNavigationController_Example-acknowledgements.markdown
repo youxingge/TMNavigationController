@@ -162,6 +162,10 @@ BOOL isRTL               = [[TMNavigationConfig shareInstance] getIsRTL]; // 是
 
 ## 更新日志
 
+### 0.2.4
+- 最低支持版本调整为 iOS 11.0，同步库声明与示例工程。
+- iOS 26 导航转场时，TabBar 显隐改为无动画同步（`animated:NO`）。
+
 ### 0.2.3
 - **适配 iOS 26 悬浮 TabBar**：iOS 26 起 TabBar 改为悬浮样式，`hidesBottomBarWhenPushed` 对其失效，push 到子页面后 TabBar 仍浮在底部。新版改用 `-[UITabBarController setTabBarHidden:animated:]` 显式控制，并新增 `navigationController:willShowViewController:animated:` 在转场开始时同步显隐，pop 回根控制器时自动恢复 TabBar。无动画 push 额外提前隐藏一次，避免 TabBar 闪现。
 
@@ -173,7 +177,7 @@ BOOL isRTL               = [[TMNavigationConfig shareInstance] getIsRTL]; // 是
 
 ## 系统要求
 
-- iOS 10.0+
+- iOS 11.0+
 
 ## Author
 
